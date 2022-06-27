@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en" class="pink-theme">
+
+
+<!-- Mirrored from maxartkiller.com/website/GoMobileUX/gofruit/statistics.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 10 Nov 2019 18:18:20 GMT -->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="Maxartkiller">
+
+    <title>Evolve · All markets</title>
+
+    <!-- Material design icons CSS -->
+    <link rel="stylesheet" href="vendor/materializeicon/material-icons.css">
+
+    <!-- Roboto fonts CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap-4.3.1/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Swiper CSS -->
+    <link href="vendor/swiper/css/swiper.min.css" rel="stylesheet">
+
+    <!-- Chosen multiselect CSS -->
+    <link href="vendor/chosen_v1.8.7/chosen.min.css" rel="stylesheet">
+
+    <!-- nouislider CSS -->
+    <link href="vendor/nouislider/nouislider.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        .row {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row no-gutters vh-100 loader-screen">
+        <div class="col align-self-center text-white text-center">
+            <img src="img/logo.png" height="50px" alt="logo">
+            <h3><span class="font-weight-light">Capfields</span>Evolve</h3>
+            <div class="laoderhorizontal">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar">
+        <div class="text-center">
+            <div class="figure-menu shadow">
+                <figure><img src="img/userpic.png" alt=""></figure>
+            </div>
+            <h5 class="mb-1" id="customerName"></h5>
+            <!--<p class="text-mute small">Abuja, Nigeria</p>-->
+        </div>
+        <br>
+        <div class="row mx-0">
+            <div class="col">
+                <div class="card mb-3 border-0 shadow-sm bg-template-light">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <p class="text-secondary small mb-0">Available Balance</p>
+                                <h6 class="text-dark my-0" id="walletBalance"></h6>
+                            </div>
+                            <div class="col-auto">
+                                <a href="fundwallet.html"><button class="btn btn-default button-rounded-36 shadow"><i class="material-icons">add</i></button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h5 class="subtitle text-uppercase"><span>Menu</span></h5>
+                <div class="list-group main-menu">
+                    <a href="index.html" class="list-group-item list-group-item-action active">Home</a>
+                    <a href="notification.html" class="list-group-item list-group-item-action">Notification <span class="badge badge-dark text-white" id="notCounter"></span></a>
+                    <a href="transfer.html" class="list-group-item list-group-item-action">Wallet Transfer</a>
+                    <a href="vendor.html" class="list-group-item list-group-item-action">Producers</a>
+                    <a href="farmonline.html" class="list-group-item list-group-item-action">Farm online</a>
+                    <a href="my-order.html" class="list-group-item list-group-item-action">My Order</a>
+                    <a href="profile.html" class="list-group-item list-group-item-action">My Profile</a>
+                    <a href="setting.html" class="list-group-item list-group-item-action">Settings</a>
+                    <a href="#" id="shareBtn" class="list-group-item list-group-item-action">Share App</a>
+                    <a href="#" onclick="logout()" class="list-group-item list-group-item-action mt-4">Logout</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="wrapper">
+        <div class="header">
+            <div class="row no-gutters">
+                <div class="col-auto">
+                    <button class="btn  btn-link text-dark menu-btn"><img src="img/menu.png" alt=""><span class="new-notification"></span></button>
+                </div>
+                <div class="col text-center"><img src="img/logo-header.png" alt="" class="header-logo"></div>
+                <div class="col-auto">
+                    <a href="profile.html" class="btn  btn-link text-dark"><i class="material-icons">account_circle</i></a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+
+            <h6 class="subtitle">Subscription Category</h6>
+            <div class="container">
+                <div class="category">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body shadow" style="background-color:#FF0068">
+                                    <center>
+                                        <img src="img/del.png" height="50px" alt="">
+                                        <h6 class="text-white" style="font-weight: bold;"></h6>
+                                    </center>
+                                </div>
+                                <div class="card-footer bg-white">
+                                    <select id="sublist" class="form-control" type="text">
+                                        <option value="">Select Subscription</option>
+                                    </select><br>
+                                    <center><button class="btn btn-default btn-block btn-rounded shadow" onclick="subscribe()">Subscribe</button></center>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="payment hidden">
+                        <center>
+                            <p class="text-muted">Payment Method</p>
+                        </center>
+                        <div class="row">
+                            <div class="col-6">
+                                <button class="btn btn-light btn-block btn-rounded shadow-sm" onclick="wallet()">Wallet</button>
+                            </div>
+                            <div class="col-6">
+                                <button class="btn btn-light btn-block btn-rounded shadow-sm" onclick="card()">Card</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <button class="btn btn-light btn-block btn-rounded shadow-sm" onclick="bank()">Bank Transfer</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cardpay hidden">
+                        <input type="hidden" id="code">
+                        <input type="hidden" id="amount">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="">Card Number</label>
+                                    <input type="number" class="form-control" placeholder="Card Number" id="cardno">
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <label for="">MM</label>
+                                    <input type="number" class="form-control" placeholder="09" id="expirymnt">
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <label for="">YY</label>
+                                    <input type="number" class="form-control" placeholder="20" id="expiryyear">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label for="">CVV</label>
+                                    <input type="number" class="form-control" placeholder="CVV" id="cvv">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="">Card Holder Name</label>
+                                    <input type="text" class="form-control" placeholder="Card Holder Name" id="cardname">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-success btn-block btn-rounded shadow-sm" id="paySub">PAY</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bank hidden" style="margin-bottom: 50px">
+                        <table class="table table-bordered table-responsive">
+                            <tr>
+                                <td>Bank</td>
+                                <td>UBA</td>
+                            </tr>
+                            <tr>
+                                <td>Account Number</td>
+                                <td>1019049321</td>
+                            </tr>
+                            <tr>
+                                <td>Account Name</td>
+                                <td>Capfields Nig Ltd</td>
+                            </tr>
+                            <tr>
+                                <td>Amount</td>
+                                <td id="transamt"></td>
+                            </tr>
+                        </table>
+                        <center>
+                            <p class="text-muted">Upload Proof of Payment</p>
+                        </center>
+                        <form action="" id="uploadimage" method="post" enctype="multipart/form-data">
+                            <input type="hidden" id="amounttf" name="amount">
+                            <input type="hidden" id="codetf" name="code">
+                            <input type="hidden" id="email" name="email">
+                            <input type="hidden" id="token" name="token">
+                            <input type="file" class="form-control" name="pic" required>
+                            <button type="submit" class="btn btn-success btn-block" id="uploadBtn">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="no-gutters">
+                <div class="col-auto mx-auto">
+                    <div class="row no-gutters justify-content-center">
+                        <div class="col-auto">
+                            <a href="index.html" class="btn btn-link-default">
+                                <i class="material-icons">store_mall_directory</i>
+                            </a>
+                            <center>
+                                <p class="text-mute" style="font-size: 10px; margin-top: -27px;opacity:0.5;">Home</p>
+                            </center>
+                        </div>
+                        <div class="col-auto">
+                            <a href="storetype.html" class="btn btn-link-default">
+                                <i class="material-icons">toc</i>
+                            </a>
+                            <center>
+                                <p class="text-mute" style="font-size: 10px; margin-top: -27px;opacity: 0.5">Category</p>
+                            </center>
+
+                            </a>
+                        </div>
+                        <div class="col-auto">
+                            <a href="cart.html" class="btn btn-default shadow centerbutton">
+                                <i class="material-icons">local_mall</i>
+                            </a>
+                            <center>
+                                <p class="text-mute" style="font-size: 10px; margin-top: -6px;opacity: 0.5">Cart</p>
+                            </center>
+                        </div>
+                        <div class="col-auto">
+                            <a href="location.html" class="btn btn-link-default">
+                                <i class="material-icons">room</i>
+                            </a>
+                            <center>
+                                <p class="text-mute" style="font-size: 10px; margin-top: -27px;opacity: 0.5">Location</p>
+                            </center>
+                        </div>
+                        <div class="col-auto">
+                            <a href="profile.html" class="btn btn-link-default">
+                                <i class="material-icons">account_circle</i>
+                            </a>
+                            <center>
+                                <p class="text-mute" style="font-size: 10px; margin-top: -27px; opacity: 0.5"> Profile</p>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jquery, popper and bootstrap js -->
+    <script src="https://kit.fontawesome.com/71ba3dee2b.js" crossorigin="anonymous"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="vendor/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- swiper js -->
+    <script src="vendor/swiper/js/swiper.min.js"></script>
+
+    <!-- nouislider js -->
+    <script src="vendor/nouislider/nouislider.min.js"></script>
+
+    <!-- chart js -->
+    <script src="vendor/chartjs/Chart.min.js"></script>
+    <script src="vendor/chartjs/utils.js"></script>
+
+    <!-- chosen multiselect js -->
+    <script src="vendor/chosen_v1.8.7/chosen.jquery.min.js"></script>
+
+    <!-- template custom js -->
+    <script src="js/main.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/profile.js"></script>
+    <script src="js/notification.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script src="checkout.js"></script>
+    <script src="js/share.js"></script>
+    <!-- page level script -->
+    <!--swipe server script-->
+    <script src="sub.js"></script>
+
+</body>
+
+</html>

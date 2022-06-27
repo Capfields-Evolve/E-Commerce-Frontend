@@ -1,0 +1,56 @@
+<?php
+session_start();
+header('Access-Control-Allow-Origin: *');
+
+header('Access-Control-Allow-Methods: POST');
+
+header("Access-Control-Allow-Headers: X-Requested-With");
+
+include 'config.php';
+
+$email=$_POST["email"];
+$token=$_POST["token"];
+$code=$_POST["code"];
+$amount=$_POST["amount"];
+$email=$con->real_escape_string($email);
+$token=$con->real_escape_string($token);
+if(empty($email)){
+    $msg="error";
+}
+elseif(empty($token)){
+    $msg="Error";
+}
+elseif(empty($code)){
+    $msg="select subscription";
+}
+elseif(empty($amount)){
+    $msg="amount required";
+}
+else{
+    $sql=$con->query("SELECT * FROM customers WHERE email='$email' AND token='$token'");
+    if($sql){
+        $count=mysqli_num_rows($sql);
+        if($count==0){
+            $msg="Invalid account";
+        }
+        else{
+            $sql1=$con->query("SELECT * FROM delivery_subscription WHERE code='$code'");
+            if($sql1){
+                $countsub=mysqli_num_rows($sql1);
+                if($countsub==0){
+                    $msg="Invalid selection";
+                }
+                else{
+                    $sql2=$con->query("INSERT INTO bank_sub (user_email, amount, code, photo, date, time) VALUES ('$email', '$amount', '$code', '$file1', '$date', '$time')");
+                    if($sql2){
+                        $msg="success";
+                    }
+                }
+            }
+        }
+    }
+}
+$data = ['message'=>$msg];
+header('Content-type: application/json');
+echo json_encode( $data );
+?>

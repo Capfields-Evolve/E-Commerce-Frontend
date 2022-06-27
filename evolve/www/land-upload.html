@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en" class="pink-theme">
+
+
+<!-- Mirrored from maxartkiller.com/website/GoMobileUX/gofruit/form-elements.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 10 Nov 2019 18:18:23 GMT -->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="Maxartkiller">
+
+    <title>Upload land · Evolve</title>
+
+    <!-- Material design icons CSS -->
+    <link rel="stylesheet" href="vendor/materializeicon/material-icons.css">
+
+    <!-- Roboto fonts CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap-4.3.1/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Swiper CSS -->
+    <link href="vendor/swiper/css/swiper.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Loader -->
+    <div class="row no-gutters vh-100 loader-screen">
+        <div class="col align-self-center text-white text-center">
+            <img src="img/logo.png" height="50px" alt="logo">
+            <h1><span class="font-weight-light">Capfields</span>Evolve</h1>
+            <div class="laoderhorizontal">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <!-- Loader ends -->
+
+    <div class="wrapper">
+
+        <!-- header -->
+        <div class="header">
+            <div class="row no-gutters">
+                <div class="col-auto">
+                    <a href="farmonline.html" class="btn  btn-link text-dark"><i class="material-icons">navigate_before</i></a>
+                </div>
+                <div class="col text-center"><img src="img/logo-header.png" alt="" class="header-logo"></div>
+                <div class="col-auto">
+                    <a href="profile.html" class="btn  btn-link text-dark"><i class="material-icons">account_circle</i></a>
+                </div>
+            </div>
+        </div>
+        <!-- header ends -->
+
+        <div class="container">
+            <!-- page content here -->
+            <!--<h6 class="subtitle">Form Floating</h6>-->
+            <form id="uploadimage" action="" method="post" enctype="multipart/form-data">
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="form-group float-label">
+                            <input type="text" class="form-control" name="name" id="landName" required>
+                            <label class="form-control-label">Land/Equipment Name</label>
+                        </div>
+                        <div class="form-group float-label">
+                            <input type="number" class="form-control" name="phone" id="landPhone" required>
+                            <label class="form-control-label">Phone</label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="form-group float-label active">
+                            <select type="text" id="countries" name="country" class="form-control countries" placeholder="Select Country" required>
+                            <option value="">Select Country</option>
+                        </select>
+                        </div>
+                        <div class="form-group float-label active">
+                            <select type="text" id="states" name="state" class="form-control states" placeholder="Select State" required>
+                            <option value="">Select State</option>
+                        </select>
+                        </div>
+                        <div class="form-group float-label active">
+                            <select type="text" id="cities" name="city" class="form-control cities" placeholder="Select City" required>
+                            <option value="">Select City</option>
+                        </select>
+                        </div>
+                        <div class="form-group float-label active">
+                            <select type="text" class="form-control" name="choice" required>
+                            <option value="rent">Rent</option>
+                            <option value="buy">Sell</option>
+                        </select>
+                            <label class="form-control-label">Select Rent or Sell</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="form-group">
+                            <label for="textinput">Address</label>
+                            <input type="text" name="address" class="form-control" id="landAdd" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="number">Proposed Rent/Selling Price</label>
+                            <input type="text" class="form-control" name="price" id="landPrice" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="number">Description</label>
+                            <input type="text" class="form-control" name="description" id="landDesc" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="number">Land Size(sqm)</label>
+                            <input type="text" class="form-control" name="size" id="landSize">
+                        </div>
+                        <div class="form-group">
+                            <label for="file">Upload File</label>
+                            <input type="file" class="form-control" name="pic" required>
+                        </div>
+                        <input type="hidden" name="email" id="email">
+                        <input type="hidden" name="token" id="token">
+                    </div>
+                    <button type="submit" class="btn btn-lg btn-default text-white btn-block btn-rounded shadow" id="submitBtn">Submit</button>
+                    <br>
+                    <!-- page content ends -->
+                </div>
+            </form>
+            <br>
+            <!-- footer -->
+            <div class="footer">
+                <div class="no-gutters">
+                    <div class="col-auto mx-auto">
+                        <div class="row no-gutters justify-content-center">
+                            <div class="col-auto">
+                                <a href="index.html" class="btn btn-link-default active">
+                                    <i class="material-icons">store_mall_directory</i>
+                                </a>
+                                <center>
+                                    <p class="text-mute" style="font-size: 10px; margin-top: -27px;opacity:0.5;">Home</p>
+                                </center>
+                            </div>
+                            <div class="col-auto">
+                                <a href="storetype.html" class="btn btn-link-default">
+                                    <i class="material-icons">toc</i>
+                                </a>
+                                <center>
+                                    <p class="text-mute" style="font-size: 10px; margin-top: -27px;opacity: 0.5">Category</p>
+                                </center>
+                            </div>
+                            <div class="col-auto">
+                                <a href="cart.html" class="btn btn-default shadow centerbutton">
+                                    <i class="material-icons">local_mall</i>
+                                </a>
+                                <center>
+                                    <p class="text-mute" style="font-size: 10px; margin-top: -6px;opacity: 0.5">Cart</p>
+                                </center>
+                            </div>
+                            <div class="col-auto">
+                                <a href="location.html" class="btn btn-link-default">
+                                    <i class="material-icons">room</i>
+                                </a>
+                                <center>
+                                    <p class="text-mute" style="font-size: 10px; margin-top: -27px;opacity: 0.5">Location</p>
+                                </center>
+                            </div>
+                            <div class="col-auto">
+                                <a href="profile.html" class="btn btn-link-default">
+                                    <i class="material-icons">account_circle</i>
+                                </a>
+                                <center>
+                                    <p class="text-mute" style="font-size: 10px; margin-top: -27px; opacity: 0.5"> Profile</p>
+                                </center>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- footer ends -->
+        </div>
+
+        <!-- jquery, popper and bootstrap js -->
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="vendor/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+
+        <!-- swiper js -->
+        <script src="vendor/swiper/js/swiper.min.js"></script>
+
+        <!-- template custom js -->
+        <script src="https://kit.fontawesome.com/71ba3dee2b.js" crossorigin="anonymous"></script>
+        <script src="js/main.js"></script>
+        <script src="js/script.js"></script>
+        <script src="js/profile.js"></script>
+        <script src="js/location.js"></script>
+        <!-- page level script -->
+        <script>
+            email = localStorage.getItem("email");
+            token = localStorage.getItem("token");
+            document.getElementById("email").value = email;
+            document.getElementById("token").value = token;
+            $(document).ready(function(e) {
+                $("#uploadimage").on('submit', (function(e) {
+                    document.getElementById("submitBtn").innerHTML = '<i class="fa fa-circle-o-notch fa-spin" style="font-size:20px"></i>';
+
+                    e.preventDefault();
+                    $.ajax({
+                        url: "https://evolve.capfields.com.ng/user_app/uploadland.php", // Url to which the request is send
+                        type: "POST", // Type of request to be send, called as method
+                        data: new FormData(this), // Data sent to server, a set of key/value pairs (i.e. form fields and values)
+                        contentType: false, // The content type used when sending data to the server.
+                        cache: false, // To unable request pages to be cached
+                        processData: false, // To send DOMDocument or non processed data file it is set to false
+                        success: function(data) // A function to be called if request succeeds
+                            {
+                                console.log(data)
+                                msg = data.message;
+                                if (msg == 'success') {
+                                    location.href = 'land-successful.html';
+                                } else {
+                                    alert(msg);
+                                    document.getElementById("submitBtn").innerHTML = 'Submit';
+                                }
+                            },
+                        error: function(data) {
+                            console.log(data)
+                            alert('Error in connection');
+                            document.getElementById("submitBtn").innerHTML = 'Submit';
+                        }
+                    });
+                }));
+            });
+        </script>
+
+</body>
+
+
+<!-- Mirrored from maxartkiller.com/website/GoMobileUX/gofruit/form-elements.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 10 Nov 2019 18:18:23 GMT -->
+
+</html>

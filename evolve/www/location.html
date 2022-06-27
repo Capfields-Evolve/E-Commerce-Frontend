@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en" class="pink-theme">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="Maxartkiller">
+
+    <title>Evolve · Location</title>
+
+    <!-- Material design icons CSS -->
+    <link rel="stylesheet" href="vendor/materializeicon/material-icons.css">
+
+    <!-- Roboto fonts CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap-4.3.1/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Swiper CSS -->
+    <link href="vendor/swiper/css/swiper.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Loader -->
+    <div class="row no-gutters vh-100 loader-screen">
+        <div class="col align-self-center text-white text-center">
+            <img src="img/logo.png" height="50px" alt="logo">
+            <h3><span class="font-weight-light">Capfields</span>Evolve</h3>
+            <div class="laoderhorizontal">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <!-- Loader ends -->
+
+    <!-- sidebar -->
+    <div class="sidebar">
+        <div class="text-center">
+            <div class="figure-menu shadow">
+                <figure><img src="img/userpic.png" alt=""></figure>
+            </div>
+            <h5 class="mb-1" id="customerName"></h5>
+            <!--<p class="text-mute small">Abuja, Nigeria</p>-->
+        </div>
+        <br>
+        <div class="row mx-0">
+            <div class="col">
+                <div class="card mb-3 border-0 shadow-sm bg-template-light">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <p class="text-secondary small mb-0">Available Balance</p>
+                                <h6 class="text-dark my-0" id="walletBalance"></h6>
+                            </div>
+                            <div class="col-auto">
+                                <a href="fundwallet.html"><button class="btn btn-default button-rounded-36 shadow"><i class="material-icons">add</i></button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h5 class="subtitle text-uppercase"><span>Menu</span></h5>
+                <div class="list-group main-menu">
+                    <a href="index.html" class="list-group-item list-group-item-action active">Home</a>
+                    <a href="notification.html" class="list-group-item list-group-item-action">Notification <span class="badge badge-dark text-white" id="notCounter"></span></a>
+                    <a href="transfer.html" class="list-group-item list-group-item-action">Wallet Transfer</a>
+                    <a href="vendor.html" class="list-group-item list-group-item-action">Producers</a>
+                    <a href="farmonline.html" class="list-group-item list-group-item-action">Farm online</a>
+                    <a href="my-order.html" class="list-group-item list-group-item-action">My Order</a>
+                    <a href="profile.html" class="list-group-item list-group-item-action">My Profile</a>
+                    <a href="setting.html" class="list-group-item list-group-item-action">Settings</a>
+                    <a href="#" id="shareBtn" class="list-group-item list-group-item-action">Share App</a>
+                    <a href="#" onclick="logout()" class="list-group-item list-group-item-action mt-4">Logout</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- sidebar ends -->
+
+    <div class="wrapper">
+
+        <!-- header -->
+        <div class="header">
+            <div class="row no-gutters">
+                <div class="col-auto">
+                    <button class="btn  btn-link text-dark menu-btn"><img src="img/menu.png" alt=""><span class="new-notification"></span></button>
+                </div>
+                <div class="col text-center"><img src="img/logo-header.png" alt="" class="header-logo"></div>
+                <div class="col-auto">
+                    <a href="profile.html" class="btn  btn-link text-dark"><i class="material-icons">account_circle</i></a>
+                </div>
+            </div>
+        </div>
+        <!-- header ends -->
+
+        <div class="container">
+            <!-- page content here -->
+            <div id="map" style="width:100%;height:400px;"></div><br>
+            <div class="story shadow" style="padding:10px">
+                <center>
+                    <h5>NOTE</h5>
+                    <p style="word-spacing:2px;line-height:30px;color:black;font-weight:500;">Changing your shopping location will automatically clear your cart. You can add products from Store, Market, Pharmacy and Fast Food to cart and it will be delivered together if you shopped from the same location.
+                    </p>
+                    <button class="btn btn-default btn-rounded shadow" onclick="showloc()">Okay</button>
+                </center>
+            </div>
+            <div class="location hidden">
+                <div class="form-group float-label">
+                    <select type="text" id="countries" class="form-control countries" placeholder="Select Country">
+                    <option value="">Select Country</option>
+                </select>
+                    <label for="inputPassword" class="form-control-label"></label>
+                </div>
+                <div class="form-group float-label">
+                    <select type="text" id="states" class="form-control states" placeholder="Select State">
+                    <option value="">Select State</option>
+                </select>
+                    <label for="inputPassword" class="form-control-label"></label>
+                </div>
+                <div class="form-group float-label">
+                    <select type="text" id="cities" class="form-control cities" placeholder="Select City">
+                    <option value="">Select City</option>
+                </select>
+                    <label for="inputPassword" class="form-control-label"></label>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <button class="btn btn-lg btn-default btn-rounded shadow btn-block" style="padding:5px" id="updateLocation"><i class="material-icons">arrow_forward</i></button>
+                    </div>
+                </div>
+            </div>
+            <!-- footer -->
+            <div class="footer">
+                <div class="no-gutters">
+                    <div class="col-auto mx-auto">
+                        <div class="row no-gutters justify-content-center">
+                            <div class="col-auto">
+                                <a href="index.html" class="btn btn-link-default active">
+                                    <i class="material-icons">store_mall_directory</i>
+                                </a>
+                                <center>
+                                    <p class="text-mute" style="font-size: 10px; margin-top: -27px;opacity:0.5;">Home</p>
+                                </center>
+                            </div>
+                            <div class="col-auto">
+                                <a href="storetype.html" class="btn btn-link-default">
+                                    <i class="material-icons">toc</i>
+                                </a>
+                                <center>
+                                    <p class="text-mute" style="font-size: 10px; margin-top: -27px;opacity: 0.5">Category</p>
+                                </center>
+                            </div>
+                            <div class="col-auto">
+                                <a href="cart.html" class="btn btn-default shadow centerbutton">
+                                    <i class="material-icons">local_mall</i>
+                                </a>
+                                <center>
+                                    <p class="text-mute" style="font-size: 10px; margin-top: -6px;opacity: 0.5">Cart</p>
+                                </center>
+                            </div>
+                            <div class="col-auto">
+                                <a href="location.html" class="btn btn-link-default">
+                                    <i class="material-icons">room</i>
+                                </a>
+                                <center>
+                                    <p class="text-mute" style="font-size: 10px; margin-top: -27px;opacity: 0.5">Location</p>
+                                </center>
+                            </div>
+                            <div class="col-auto">
+                                <a href="profile.html" class="btn btn-link-default">
+                                    <i class="material-icons">account_circle</i>
+                                </a>
+                                <center>
+                                    <p class="text-mute" style="font-size: 10px; margin-top: -27px; opacity: 0.5"> Profile</p>
+                                </center>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- footer ends -->
+        </div>
+
+        <!-- jquery, popper and bootstrap js -->
+        <script src="https://kit.fontawesome.com/71ba3dee2b.js" crossorigin="anonymous"></script>
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="vendor/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+        <script src="vendor/swiper/js/swiper.min.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/script.js"></script>
+        <script src="login.js"></script>
+        <script src="js/profile.js"></script>
+        <script src="js/location.js"></script>
+        <script src="cordova.js"></script>
+        <script src="js/share.js"></script>
+        <script>
+            function showloc() {
+                $(".story").addClass("hidden");
+                $(".location").removeClass("hidden")
+            }
+            //map and geocode
+            var map, infoWindow, directionsService, directionsRenderer;
+
+            function initMap() {
+                directionsService = new google.maps.DirectionsService();
+                directionsRenderer = new google.maps.DirectionsRenderer();
+                map = new google.maps.Map(document.getElementById('map'), {
+                    center: {
+                        lat: 7.3775,
+                        lng: 3.9470
+                    },
+                    zoom: 15,
+                    streetViewControl: true,
+                    zoomControl: false,
+                    fullscreenControl: true
+                });
+
+                //var onChangeHandler = function() {
+                //calculateAndDisplayRoute(directionsService, directionsRenderer);
+                //};
+                //document.getElementById('start').addEventListener('change', onChangeHandler);
+                //document.getElementById('end').addEventListener('change', onChangeHandler);
+                //calculateAndDisplayRoute(directionsService, directionsRenderer);
+                directionsRenderer.setMap(map);
+                infoWindow = new google.maps.InfoWindow;
+
+                // Try HTML5 geolocation.
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(function(position) {
+                        window.pos = {
+                            lat: position.coords.latitude,
+                            lng: position.coords.longitude
+                        };
+
+                        infoWindow.setPosition(pos);
+                        infoWindow.setContent('location found');
+                        infoWindow.open(map);
+                        map.setCenter(pos);
+                        var marker = new google.maps.Marker({
+                            position: pos,
+                            map: map,
+                            title: 'Hello World!'
+                        });
+
+                    }, function() {
+                        handleLocationError(true, infoWindow, map.getCenter());
+                    });
+                } else {
+                    // Browser doesn't support Geolocation
+                    handleLocationError(false, infoWindow, map.getCenter());
+                }
+            }
+
+            function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+                infoWindow.setPosition(pos);
+                infoWindow.setContent(browserHasGeolocation ?
+                    'Error: The Geolocation service failed.' :
+                    'Error: Your browser doesn\'t support geolocation.');
+                infoWindow.open(map);
+            }
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsv_sGbswlk6SIrFf_v8BuTLzCYEG-J94&libraries=places&callback=initMap"></script>
+
+</body>
+
+</html>

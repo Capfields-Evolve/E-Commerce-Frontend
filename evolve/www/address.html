@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en" class="pink-theme">
+
+
+<!-- Mirrored from maxartkiller.com/website/GoMobileUX/gofruit/collpase.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 10 Nov 2019 18:18:23 GMT -->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="Maxartkiller">
+
+    <title>Evolve · Location</title>
+
+    <!-- Material design icons CSS -->
+    <link rel="stylesheet" href="vendor/materializeicon/material-icons.css">
+
+    <!-- Roboto fonts CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap-4.3.1/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Swiper CSS -->
+    <link href="vendor/swiper/css/swiper.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Loader -->
+    <div class="row no-gutters vh-100 loader-screen">
+        <div class="col align-self-center text-white text-center">
+            <img src="img/logo.png" height="50px" alt="logo">
+            <h3><span class="font-weight-light">Capfields</span>Evolve</h3>
+            <div class="laoderhorizontal">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <!-- Loader ends -->
+
+    <!-- sidebar -->
+    <div class="sidebar">
+        <div class="text-center">
+            <div class="figure-menu shadow">
+                <figure><img src="img/userpic.png" alt=""></figure>
+            </div>
+            <h5 class="mb-1" id="customerName"></h5>
+            <!--<p class="text-mute small">Abuja, Nigeria</p>-->
+        </div>
+        <br>
+        <div class="row mx-0">
+            <div class="col">
+                <div class="card mb-3 border-0 shadow-sm bg-template-light">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <p class="text-secondary small mb-0">Available Balance</p>
+                                <h6 class="text-dark my-0" id="walletBalance"></h6>
+                            </div>
+                            <div class="col-auto">
+                                <a href="fundwallet.html"><button class="btn btn-default button-rounded-36 shadow"><i class="material-icons">add</i></button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h5 class="subtitle text-uppercase"><span>Menu</span></h5>
+                <div class="list-group main-menu">
+                    <a href="index.html" class="list-group-item list-group-item-action active">Home</a>
+                    <a href="notification.html" class="list-group-item list-group-item-action">Notification <span class="badge badge-dark text-white">2</span></a>
+                    <a href="#" class="list-group-item list-group-item-action">Transfer to me</a>
+                    <a href="#" class="list-group-item list-group-item-action">Vendor</a>
+                    <a href="#" class="list-group-item list-group-item-action">Farm online</a>
+                    <a href="my-order.html" class="list-group-item list-group-item-action">My Order</a>
+                    <a href="profile.html" class="list-group-item list-group-item-action">My Profile</a>
+                    <!--<a href="controls.html" class="list-group-item list-group-item-action">Pages Controls <span class="badge badge-light ml-2">Check</span></a>-->
+                    <a href="setting.html" class="list-group-item list-group-item-action">Settings</a>
+                    <a href="#" id="shareBtn" class="list-group-item list-group-item-action">Share App</a>
+                    <a href="login.html" class="list-group-item list-group-item-action mt-4">Logout</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- sidebar ends -->
+
+    <div class="wrapper">
+
+        <!-- header -->
+        <div class="header">
+            <div class="row no-gutters">
+                <div class="col-auto">
+                    <button class="btn  btn-link text-dark menu-btn"><img src="img/menu.png" alt=""><span class="new-notification"></span></button>
+                </div>
+                <div class="col text-center"><img src="img/logo-header.png" alt="" class="header-logo"></div>
+                <div class="col-auto">
+                    <a href="profile.html" class="btn  btn-link text-dark"><i class="material-icons">account_circle</i></a>
+                </div>
+            </div>
+        </div>
+        <!-- header ends -->
+
+        <div class="container">
+            <!-- page content here -->
+            <center><img src="img/loca.png" height="200px"></center>
+            <h5 align="center">Add Address</h5>
+            <div class="form-group float-label">
+                <select type="text" id="countries" class="form-control countries" placeholder="Select Country">
+                    <option value="">Select Country</option>
+                </select>
+                <label for="inputPassword" class="form-control-label"></label>
+            </div>
+            <div class="form-group float-label">
+                <select type="text" id="states" class="form-control states" placeholder="Select State">
+                    <option value="">Select State</option>
+                </select>
+                <label for="inputPassword" class="form-control-label"></label>
+            </div>
+            <div class="form-group float-label">
+                <select type="text" id="cities" class="form-control cities" placeholder="Select City">
+                    <option value="">Select City</option>
+                </select>
+                <label for="inputPassword" class="form-control-label"></label>
+            </div>
+            <div class="form-group float-label">
+                <input type="text" class="form-control" id="pac-input" placeholder="">
+                <label for="inputPassword" class="form-control-label">Address</label>
+                <input type="hidden" name="type" id="changetype-all" checked="checked">
+                <div id="map"></div>
+                <div id="infowindow-content">
+                    <span id="place-name" class="title"></span><br>
+                    <span id="place-address"></span>
+                </div>
+                <div class="form-group float-label">
+                    <input type="number" id="telephone" class="form-control" placeholder="">
+                    <label for="inputPassword" class="form-control-label">Phone</label>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <button class="btn btn-lg btn-default btn-rounded shadow btn-block" style="padding:5px" id="addAddress"><i class="material-icons">arrow_forward</i></button>
+                    </div>
+                </div>
+                <!-- footer -->
+                <div class="footer">
+                    <div class="no-gutters">
+                        <div class="col-auto mx-auto">
+                            <div class="row no-gutters justify-content-center">
+                                <div class="col-auto">
+                                    <a href="index.html" class="btn btn-link-default active">
+                                        <i class="material-icons">store_mall_directory</i>
+                                    </a>
+                                    <center>
+                                        <p class="text-mute" style="font-size: 10px; margin-top: -27px;opacity:0.5;">Home</p>
+                                    </center>
+                                </div>
+                                <div class="col-auto">
+                                    <a href="storetype.html" class="btn btn-link-default">
+                                        <i class="material-icons">toc</i>
+                                    </a>
+                                    <center>
+                                        <p class="text-mute" style="font-size: 10px; margin-top: -27px;opacity: 0.5">Category</p>
+                                    </center>
+
+                                    </a>
+                                </div>
+                                <div class="col-auto">
+                                    <a href="cart.html" class="btn btn-default shadow centerbutton">
+                                        <i class="material-icons">local_mall</i>
+                                    </a>
+                                    <center>
+                                        <p class="text-mute" style="font-size: 10px; margin-top: -6px;opacity: 0.5">Cart</p>
+                                    </center>
+                                </div>
+                                <div class="col-auto">
+                                    <a href="location.html" class="btn btn-link-default">
+                                        <i class="material-icons">room</i>
+                                    </a>
+                                    <center>
+                                        <p class="text-mute" style="font-size: 10px; margin-top: -27px;opacity: 0.5">Location</p>
+                                    </center>
+                                </div>
+                                <div class="col-auto">
+                                    <a href="profile.html" class="btn btn-link-default">
+                                        <i class="material-icons">account_circle</i>
+                                    </a>
+                                    <center>
+                                        <p class="text-mute" style="font-size: 10px; margin-top: -27px; opacity: 0.5"> Profile</p>
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- footer ends -->
+            </div>
+
+            <!-- jquery, popper and bootstrap js -->
+            <script src="js/jquery-3.3.1.min.js"></script>
+            <script src="js/popper.min.js"></script>
+            <script src="vendor/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+            <script src="vendor/swiper/js/swiper.min.js"></script>
+            <script src="js/main.js"></script>
+            <script src="login.js"></script>
+            <script src="js/script.js"></script>
+            <script src="js/profile.js"></script>
+            <script src="js/location.js"></script>
+            <script src="cordova.js"></script>
+            <script src="js/share.js"></script>
+            <script>
+                //map and geocode
+                var map, infoWindow, directionsService, directionsRenderer;
+
+                function initMap() {
+                    var map = new google.maps.Map(document.getElementById('map'), {
+                        center: {
+                            lat: -33.8688,
+                            lng: 151.2195
+                        },
+                        zoom: 13
+                    });
+                    var card = document.getElementById('pac-card');
+                    var input = document.getElementById('pac-input');
+                    //var deladd = document.getElementById("deladd");
+                    var types = document.getElementById('type-selector');
+                    var strictBounds = document.getElementById('strict-bounds-selector');
+
+                    map.controls[google.maps.ControlPosition.TOP_RIGHT].push(card);
+
+                    var autocomplete = new google.maps.places.Autocomplete(input);
+                    var secondautocomplete = new google.maps.places.Autocomplete(deladd);
+
+                    // Bind the map's bounds (viewport) property to the autocomplete object,
+                    // so that the autocomplete requests use the current map bounds for the
+                    // bounds option in the request.
+                    autocomplete.bindTo('bounds', map);
+                    secondautocomplete.bindTo('bounds', map);
+                    // Set the data fields to return when the user selects a place.
+                    autocomplete.setFields(
+                        ['address_components', 'geometry', 'icon', 'name']);
+                    secondautocomplete.setFields(
+                        ['address_components', 'geometry', 'icon', 'name']);
+                    var infowindow = new google.maps.InfoWindow();
+                    var infowindowContent = document.getElementById('infowindow-content');
+                    infowindow.setContent(infowindowContent);
+                    var marker = new google.maps.Marker({
+                        map: map,
+                        anchorPoint: new google.maps.Point(0, -29)
+                    });
+
+                    autocomplete.addListener('place_changed', function() {
+                        infowindow.close();
+                        marker.setVisible(false);
+                        var place = autocomplete.getPlace();
+                        if (!place.geometry) {
+                            // User entered the name of a Place that was not suggested and
+                            // pressed the Enter key, or the Place Details request failed.
+                            window.alert("No details available for input: '" + place.name + "'");
+                            return;
+                        }
+
+                        // If the place has a geometry, then present it on a map.
+                        if (place.geometry.viewport) {
+                            map.fitBounds(place.geometry.viewport);
+                        } else {
+                            map.setCenter(place.geometry.location);
+                            map.setZoom(17); // Why 17? Because it looks good.
+                        }
+                        marker.setPosition(place.geometry.location);
+                        marker.setVisible(true);
+
+                        var address = '';
+                        if (place.address_components) {
+                            address = [
+                                (place.address_components[0] && place.address_components[0].short_name || ''),
+                                (place.address_components[1] && place.address_components[1].short_name || ''),
+                                (place.address_components[2] && place.address_components[2].short_name || '')
+                            ].join(' ');
+                        }
+
+                        infowindowContent.children['place-icon'].src = place.icon;
+                        infowindowContent.children['place-name'].textContent = place.name;
+                        infowindowContent.children['place-address'].textContent = address;
+                        infowindow.open(map, marker);
+                    });
+
+                    secondautocomplete.addListener('place_changed', function() {
+                        infowindow.close();
+                        marker.setVisible(false);
+                        var place = secondautocomplete.getPlace();
+                        if (!place.geometry) {
+                            // User entered the name of a Place that was not suggested and
+                            // pressed the Enter key, or the Place Details request failed.
+                            window.alert("No details available for input: '" + place.name + "'");
+                            return;
+                        }
+
+                        // If the place has a geometry, then present it on a map.
+                        if (place.geometry.viewport) {
+                            map.fitBounds(place.geometry.viewport);
+                        } else {
+                            map.setCenter(place.geometry.location);
+                            map.setZoom(17); // Why 17? Because it looks good.
+                        }
+                        marker.setPosition(place.geometry.location);
+                        marker.setVisible(true);
+
+                        var address = '';
+                        if (place.address_components) {
+                            address = [
+                                (place.address_components[0] && place.address_components[0].short_name || ''),
+                                (place.address_components[1] && place.address_components[1].short_name || ''),
+                                (place.address_components[2] && place.address_components[2].short_name || '')
+                            ].join(' ');
+                        }
+
+                        infowindowContent.children['place-icon'].src = place.icon;
+                        infowindowContent.children['place-name'].textContent = place.name;
+                        infowindowContent.children['place-address'].textContent = address;
+                        infowindow.open(map, marker);
+                    });
+                    // Sets a listener on a radio button to change the filter type on Places
+                    // Autocomplete.
+                    function setupClickListener(id, types) {
+                        var radioButton = document.getElementById(id);
+                        radioButton.addEventListener('click', function() {
+                            autocomplete.setTypes(types);
+                        });
+                    }
+
+                    setupClickListener('changetype-all', []);
+                    setupClickListener('changetype-address', ['address']);
+                    setupClickListener('changetype-establishment', ['establishment']);
+                    setupClickListener('changetype-geocode', ['geocode']);
+
+                    document.getElementById('use-strict-bounds')
+                        .addEventListener('click', function() {
+                            console.log('Checkbox clicked! New state=' + this.checked);
+                            autocomplete.setOptions({
+                                strictBounds: this.checked
+                            });
+                        });
+                }
+
+                //update addres
+                $("#addAddress").click(function(e) {
+                    e.preventDefault();
+                    country = $("#countries").val();
+                    state = $("#states").val();
+                    city = $("#cities").val();
+                    address = $("#pac-input").val();
+                    telephone = $("#telephone").val();
+                    if (country == "") {
+                        alert('Select country')
+                    } else if (state == "") {
+                        alert('Select state');
+                    } else if (city == "") {
+                        alert('Select city');
+                    } else if (address == "") {
+                        alert('Enter address');
+                    } else if (telephone == "") {
+                        alert('Enter phone number');
+                    } else {
+                        $.ajax({
+                            url: "https://evolve.capfields.com.ng/user_app/address.php",
+                            type: "POST",
+                            headers: {
+                                Accept: 'application/json'
+                            },
+                            data: {
+                                email: email,
+                                token: token,
+                                country: country,
+                                state: state,
+                                city: city,
+                                address: address,
+                                phone: telephone
+                            },
+                            success: function(res) {
+                                console.log(res)
+                                msg = res.message;
+                                if (msg == 'success') {
+                                    location.href = 'cart.html';
+                                }
+                            },
+                            error: function(res) {
+                                console.log(res)
+                            }
+                        });
+                    }
+
+                })
+            </script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-IV8ZycFasvq5E108MRdibGrsP7qoGsU&libraries=places&callback=initMap"></script>
+
+</body>
+
+</html>

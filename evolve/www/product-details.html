@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en" class="pink-theme">
+
+
+<!-- Mirrored from maxartkiller.com/website/GoMobileUX/gofruit/product-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 10 Nov 2019 18:18:18 GMT -->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="Maxartkiller">
+
+    <title>Product · Evolve</title>
+
+    <!-- Material design icons CSS -->
+    <link rel="stylesheet" href="vendor/materializeicon/material-icons.css">
+
+    <!-- Roboto fonts CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap-4.3.1/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Swiper CSS -->
+    <link href="vendor/swiper/css/swiper.min.css" rel="stylesheet">
+
+    <!-- Chosen multiselect CSS -->
+    <link href="vendor/chosen_v1.8.7/chosen.min.css" rel="stylesheet">
+
+    <!-- nouislider CSS -->
+    <link href="vendor/nouislider/nouislider.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        .textwrap {
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 13ch;
+        }
+        
+        .storetextwrap {
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 15ch;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row no-gutters vh-100 loader-screen">
+        <div class="col align-self-center text-white text-center">
+            <img src="img/logo.png" height="50px" alt="logo">
+            <h3><span class="font-weight-light">Capfields</span>Evolve</h3>
+            <div class="laoderhorizontal">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="header">
+            <div class="row no-gutters">
+                <div class="col-auto">
+                    <a href="#" onclick="goBack()" class="btn  btn-link text-dark"><i class="material-icons">navigate_before</i></a>
+                </div>
+                <div class="col text-center"><img src="img/logo-header.png" alt="" class="header-logo"></div>
+                <div class="col-auto">
+                    <a href="profile.html" class="btn  btn-link text-dark"><i class="material-icons">account_circle</i></a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+
+            <!-- Swiper -->
+            <div class="swiper-container product-details">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="img/apple.png" id="pic1" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/apple.png" id="pic2" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/apple.png" id="pic3" alt="">
+                    </div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+
+
+            <!--<button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>
+            <a href="javascript:void(0)" class="btn btn-sm btn-default btn-rounded ml-2" data-toggle="modal" data-target="#share"><i class="material-icons mb-18 mr-2">share</i>Share</a>
+            <div class="badge badge-success float-right mt-1">10% off</div>-->
+
+            <!--<p class="text-secondary my-3 small">
+                <i class="material-icons text-warning md-18 vm">star</i>
+                <i class="material-icons text-warning md-18 vm">star</i>
+                <i class="material-icons text-warning md-18 vm">star</i>
+                <i class="material-icons text-secondary md-18 vm">star</i>
+                <i class="material-icons text-secondary md-18 vm">star</i>
+                <span class="text-dark vm ml-2">Rating 4.2</span> <span class="vm">based on 245 reviews</span>
+            </p>-->
+
+            <a href="#" class="text-dark mb-1 mt-2 h6 d-block" id="pname"></a>
+            <p class="text-secondary small mb-2" id="storename"></p>
+
+            <p class="text-secondary" id="desc"></p>
+            <div class="row mb-4">
+                <div class="col">
+                    <h3 class="text-success font-weight-normal mb-0" id="price"></h3>
+                    <p class="text-success font-weight-normal mb-0" id="price"><span></span></p>
+                    <p class="text-secondary text-mute mb-0"><del id="discount"></del></p>
+                </div>
+                <div class="col-auto align-self-center">
+                    <a id="link"><button class="btn btn-lg btn-default shadow btn-rounded">Add <i class="material-icons md-18">shopping_cart</i></button></a>
+                </div>
+            </div>
+            <h5 align="center">Related Products</h5>
+            <div class="row" id="products"></div>
+            <!--<h6 class="subtitle">Product Budget</h6>
+            <div class="row bg-white py-3">
+                <div class="col-6 mb-3">
+                    <p>
+                        <i class="material-icons text-warning md-18 vm">star</i>
+                        <i class="material-icons text-warning md-18 vm">star</i>
+                        <i class="material-icons text-warning md-18 vm">star</i>
+                        <i class="material-icons text-secondary md-18 vm">star</i>
+                        <i class="material-icons text-secondary md-18 vm">star</i>
+                    </p>
+                </div>
+                <div class="col-6 mb-3 text-right">
+                    <p class="text-muted small">2 hours ago</p>
+                </div>
+                <div class="col-auto align-self-start">
+                    <figure class="avatar avatar-50">
+                        <img src="img/user1.png" alt="">
+                    </figure>
+                </div>
+                <div class="col">
+                    <h6>Lorem ipsum dolor sit amet consectetur adipiscing lorem ipsum dolor.</h6>
+                    <p class="text-secondary small">Lorem ipsum dolor sit amet, consect etur adipiscing elit. Sndisse conv allis. Lorem ipsum dolor sit amet, consect etur adipiscing elit. Sandside conv allis .</p>
+                </div>
+            </div>-->
+
+            <!--<h6 class="subtitle">Add Comment</h6>
+            <p class="text-center">
+                <i class="material-icons h3 text-warning vm">star</i>
+                <i class="material-icons h3 text-warning vm">star</i>
+                <i class="material-icons h3 text-warning vm">star</i>
+                <i class="material-icons h3 text-secondary vm">star</i>
+                <i class="material-icons h3 text-secondary vm">star</i>
+            </p>
+
+            <div class="form-group float-label active">
+                <input type="text" class="form-control" required="" value="Jordan Simond">
+                <label class="form-control-label">Name</label>
+            </div>
+            <div class="form-group float-label active">
+                <input type="email" class="form-control" required="" value="gofruites@gmail.co">
+                <label class="form-control-label">Email address</label>
+            </div>
+            <div class="form-group float-label">
+                <textarea class="form-control" required=""></textarea>
+                <label class="form-control-label">Type your comment...</label>
+            </div>
+            <a href="#" class="btn btn-lg btn-default btn-rounded shadow"><span>Comment</span><i class="material-icons">arrow_forward</i></a>
+
+            <br>
+            <br>-->
+
+        </div>
+        <div class="footer">
+            <div class="no-gutters">
+                <div class="col-auto mx-auto">
+                    <div class="row no-gutters justify-content-center">
+                        <div class="col-auto">
+                            <a href="index.html" class="btn btn-link-default active">
+                                <i class="material-icons">store_mall_directory</i>
+                            </a>
+                            <center>
+                                <p class="text-mute" style="font-size: 10px; margin-top: -27px;opacity:0.5;">Home</p>
+                            </center>
+                        </div>
+                        <div class="col-auto">
+                            <a href="storetype.html" class="btn btn-link-default">
+                                <i class="material-icons">toc</i>
+                            </a>
+                            <center>
+                                <p class="text-mute" style="font-size: 10px; margin-top: -27px;opacity: 0.5">Category</p>
+                            </center>
+
+                            </a>
+                        </div>
+                        <div class="col-auto">
+                            <a href="cart.html" class="btn btn-default shadow centerbutton">
+                                <i class="material-icons">local_mall</i>
+                            </a>
+                            <center>
+                                <p class="text-mute" style="font-size: 10px; margin-top: -6px;opacity: 0.5">Cart</p>
+                            </center>
+                        </div>
+                        <div class="col-auto">
+                            <a href="location.html" class="btn btn-link-default">
+                                <i class="material-icons">room</i>
+                            </a>
+                            <center>
+                                <p class="text-mute" style="font-size: 10px; margin-top: -27px;opacity: 0.5">Location</p>
+                            </center>
+                        </div>
+                        <div class="col-auto">
+                            <a href="profile.html" class="btn btn-link-default">
+                                <i class="material-icons">account_circle</i>
+                            </a>
+                            <center>
+                                <p class="text-mute" style="font-size: 10px; margin-top: -27px; opacity: 0.5"> Profile</p>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 
+    <div class="modal fade" id="shar" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-sm modal-dialog-end" role="document">
+            <div class="modal-content text-center">                
+                <div class="modal-body">
+                    <h6 class="subtitle mt-0"></h6>
+                    <div class="row">
+                        <div class="col-12">
+                            <figure class="avatar avatar-50 border-0 mx-1">
+                                <img src="img/facebook.png" alt="">
+                            </figure>
+                            <figure class="avatar avatar-50 border-0 mx-1">
+                                <img src="img/whatsapp.png" alt="">
+                            </figure>
+                            <figure class="avatar avatar-50 border-0 mx-1">
+                                <img src="img/linkdedin.png" alt="">
+                            </figure>
+                            <figure class="avatar avatar-50 border-0 mx-1">
+                                <img src="img/twitter.png" alt="">
+                            </figure>
+                        </div>-->
+    </div>
+
+    <p class="subtitle text-secondary"></p>
+    <div class="row">
+        <div class="col-12">
+            <figure class="avatar avatar-50">
+                <img src="img/user1.png" alt="">
+            </figure>
+            <figure class="avatar avatar-50">
+                <img src="img/user2.png" alt="">
+            </figure>
+            <figure class="avatar avatar-50">
+                <img src="img/user3.png" alt="">
+            </figure>
+            <figure class="avatar avatar-50">
+                <img src="img/user4.png" alt="">
+            </figure>
+            <figure class="avatar avatar-50">
+                <img src="img/user2.png" alt="">
+            </figure>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+    <!-- jquery, popper and bootstrap js -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="vendor/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- swiper js -->
+    <script src="vendor/swiper/js/swiper.min.js"></script>
+
+    <!-- nouislider js -->
+    <script src="vendor/nouislider/nouislider.min.js"></script>
+
+    <!-- chosen multiselect js -->
+    <script src="vendor/chosen_v1.8.7/chosen.jquery.min.js"></script>
+
+    <!-- template custom js -->
+    <script src="js/main.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/profile.js"></script>
+    <script src="js/loc.js"></script>
+
+    <!-- page level script -->
+    <script>
+        $(window).on('load', function() {
+            var swiper = new Swiper('.product-details ', {
+                slidesPerView: 1,
+                spaceBetween: 0,
+                pagination: {
+                    el: '.swiper-pagination'
+                }
+            });
+        });
+
+        function goBack() {
+            window.history.back();
+        }
+        var getUrlParameter = function getUrlParameter(sParam) {
+            var sPageURL = window.location.search.substring(1),
+                sURLVariables = sPageURL.split('&'),
+                sParameterName,
+                i;
+
+            for (i = 0; i < sURLVariables.length; i++) {
+                sParameterName = sURLVariables[i].split('=');
+
+                if (sParameterName[0] === sParam) {
+                    return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+                }
+            }
+        };
+        var code = getUrlParameter('code');
+        var type = getUrlParameter('type');
+        document.getElementById("link").setAttribute("href", "addtocart.html?type=" + type + "&pcode=" + code);
+        if (code != "") {
+            $.ajax({
+                url: "https://evolve.capfields.com.ng/user_app/product-detail.php",
+                type: "POST",
+                headers: {
+                    Accept: 'application/json'
+                },
+                data: {
+                    email: email,
+                    token: token,
+                    code: code
+                },
+                success: function(res) {
+                    console.log(res)
+                    photo1 = res.photo1;
+                    photo2 = res.photo2;
+                    photo3 = res.photo3;
+                    document.getElementById("pic1").setAttribute("src", "https://evolve.capfields.com.ng/view/products/" + photo1);
+                    document.getElementById("pic2").setAttribute("src", "https://evolve.capfields.com.ng/view/products/" + photo2);
+                    document.getElementById("pic3").setAttribute("src", "https://evolve.capfields.com.ng/view/products/" + photo3);
+                    pname = res.productname;
+                    desc = res.description;
+                    price = res.price;
+                    discount = res.discount;
+                    store = res.storename;
+                    realprice = price - discount;
+                    $("#pname").append(pname);
+                    $("#desc").append(desc);
+                    $("#price").append('&#8358;', realprice);
+                    $("#discount").append('&#8358;', price);
+                    $("#storename").append(store);
+                    product = '';
+                    $.each(res.products, function(key, value) {
+                        product += '<div class="col-6 col-md-4 col-lg-3 col-xl-2">';
+                        product += '<div class="card shadow-sm border-0 mb-4">';
+                        product += '<div class="card-body">';
+                        //product += '<button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>';
+                        //product += '<div class="badge badge-success float-right mt-1">10% off</div>';
+                        product += '<a href="product-details.html?type=fastfood.html&code=' + value.product_code + '"><figure class="product-image"><img src="https://evolve.capfields.com.ng/view/products/' + value.photo + '" alt="" class=""></figure></a>';
+                        product += '<a href="product-details.html?code=' + value.product_code + '&type=' + type + '" class="text-dark mb-1 mt-2 h6 d-block textwrap">' + value.product + '</a>';
+                        product += '<p class="text-secondary small mb-2 storetextwrap">' + value.store_name + '</p>';
+                        product += '<h5 class="text-success font-weight-normal mb-0">&#8358;' + value.price + '<sup style="color:red">  ' + value.discount + '</sup></h5>';
+                        product += '<a href="addtocart.html?type=market.html&pcode=' + value.product_code + '"><button class="btn btn-default button-rounded-36 shadow-sm float-bottom-right"><i class="material-icons md-18">shopping_cart</i></button></a>';
+                        product += ' </div>';
+                        product += ' </div>';
+                        product += ' </div>';
+                    });
+                    $("#products").append(product);
+                },
+                error: function(res) {
+                    console.log(res)
+                    alert('Error in connection');
+                }
+            });
+        } else {
+            goBack();
+        }
+    </script>
+
+</body>
+
+</html>

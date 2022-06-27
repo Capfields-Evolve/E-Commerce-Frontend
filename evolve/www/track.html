@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market</title>
+
+    <!-- Material design icons CSS -->
+    <link rel="stylesheet" href="vendor/materializeicon/material-icons.css">
+
+    <!-- Roboto fonts CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap-4.3.1/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Swiper CSS -->
+    <link href="vendor/swiper/css/swiper.min.css" rel="stylesheet">
+
+    <!-- Chosen multiselect CSS -->
+    <link href="vendor/chosen_v1.8.7/chosen.min.css" rel="stylesheet">
+
+    <!-- nouislider CSS -->
+    <link href="vendor/nouislider/nouislider.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="vendor/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- swiper js -->
+    <script src="vendor/swiper/js/swiper.min.js"></script>
+
+    <!-- nouislider js -->
+    <script src="vendor/nouislider/nouislider.min.js"></script>
+
+    <!-- chosen multiselect js -->
+    <script src="vendor/chosen_v1.8.7/chosen.jquery.min.js"></script>
+
+    <!-- template custom js -->
+    <script src="js/main.js"></script>
+    <script src="login.js"></script>
+    <script src="js/profile.js"></script>
+    <script src="js/loc.js"></script>
+    <script>
+        var getUrlParameter = function getUrlParameter(sParam) {
+            var sPageURL = window.location.search.substring(1),
+                sURLVariables = sPageURL.split('&'),
+                sParameterName,
+                i;
+
+            for (i = 0; i < sURLVariables.length; i++) {
+                sParameterName = sURLVariables[i].split('=');
+
+                if (sParameterName[0] === sParam) {
+                    return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+                }
+            }
+        };
+        var code = getUrlParameter('code');
+
+        if (code != "") {
+            $.ajax({
+                url: "https://evolve.capfields.com.ng/user_app/track-order.php",
+                type: "POST",
+                headers: {
+                    Accept: 'application/json'
+                },
+                data: {
+                    email: email,
+                    token: token,
+                    code: code
+                },
+                success: function(res) {
+                    console.log(res)
+                    msg = res.message;
+                    alert(msg);
+                    location.href = 'profile.html';
+
+                },
+                error: function(res) {
+                    console.log(res)
+                    alert('Error in connection');
+                    location.href = 'profile.html';
+                }
+            });
+        } else {
+            window.location = 'profile.html';
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en" class="blue-theme">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="Maxartkiller">
+
+    <title>Capfields Laundry</title>
+
+    <!-- Material design icons CSS -->
+    <link rel="stylesheet" href="vendor/materializeicon/material-icons.css">
+
+    <!-- Roboto fonts CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap-4.3.1/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Swiper CSS -->
+    <link href="vendor/swiper/css/swiper.min.css" rel="stylesheet">
+
+    <!-- Chosen multiselect CSS -->
+    <link href="vendor/chosen_v1.8.7/chosen.min.css" rel="stylesheet">
+
+    <!-- nouislider CSS -->
+    <link href="vendor/nouislider/nouislider.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        .textwrap {
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 13ch;
+        }
+        
+        .storetextwrap {
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 15ch;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row no-gutters vh-100 loader-screen">
+        <div class="col align-self-center text-white text-center">
+            <img src="../img/logo.png" height="50px" alt="logo">
+            <h3><span class="font-weight-light">Capfields</span>Laundry</h3>
+            <div class="laoderhorizontal">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar">
+        <div class="text-center">
+            <div class="figure-menu shadow">
+                <figure><img src="img/userpic.png" alt=""></figure>
+            </div>
+            <h5 class="mb-1" id="customerName"></h5>
+            <!--<p class="text-mute small">Abuja, Nigeria</p>-->
+        </div>
+        <br>
+        <div class="row mx-0">
+            <div class="col">
+                <div class="card mb-3 border-0 shadow-sm bg-template-light">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <p class="text-secondary small mb-0">Available Balance</p>
+                                <h6 class="text-dark my-0" id="walletBalance"></h6>
+                            </div>
+                            <div class="col-auto">
+                                <a href="fundwallet.html"><button class="btn btn-default button-rounded-36 shadow"><i class="material-icons">add</i></button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h5 class="subtitle text-uppercase"><span>Menu</span></h5>
+                <div class="list-group main-menu">
+                    <a href="main.html" class="list-group-item list-group-item-action active">Home</a>
+                    <a href="#" class="list-group-item list-group-item-action">Track Delivery</a>
+                    <a href="#" class="list-group-item list-group-item-action">Confirm Delivery</a>
+                    <a href="#" class="list-group-item list-group-item-action">Become a member</a>
+                    <a href="#" class="list-group-item list-group-item-action">Repeat Order</a>
+                    <a href="../transfer.html" class="list-group-item list-group-item-action">Wallet</a>
+                    <a href="#" class="list-group-item list-group-item-action">Report</a>
+
+                    <a href="#" id="shareBtn" class="list-group-item list-group-item-action">Share App</a>
+                    <a href="#" onclick="logout()" class="list-group-item list-group-item-action mt-4">Logout</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="wrapper">
+        <div class="header">
+            <div class="row no-gutters">
+                <div class="col-auto">
+                    <button class="btn  btn-link text-dark menu-btn"><img src="img/menu.png" alt=""><span class="new-notification"></span></button>
+                </div>
+                <div class="col text-center"><img src="img/logo-header.png" alt="" class="header-logo"></div>
+                <div class="col-auto">
+                    <a href="profile.html" class="btn  btn-link text-dark"><i class="material-icons">account_circle</i></a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <br>
+            <br>
+
+
+            <!--<div class="subtitle h6">
+                <div class="d-inline-block">
+                    All fresh fruits<br>
+                    <p class="small text-mute">2154 products</p>
+                </div>
+                <div class="float-right">
+                    <div class="btn-group filter-group" role="group" aria-label="Basic example">
+                        <a href="all-products.html" class="btn btn-light active"><i class="material-icons">view_module</i></a>
+                        <a href="all-products-list.html" class="btn btn-light"><i class="material-icons">view_list</i></a>
+                    </div>
+                </div>
+            </div>-->
+
+            <div class="row" id="clot" class="products">
+
+                <table class="table table-responsive">
+                    <tr>
+                        <th>Item</th>
+                        <th>Quantity</th>
+                        <th>Washing</th>
+                        <th>Ironing</th>
+                        <th>Starching</th>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bold">Clothes</td>
+                        <input type="hidden" id="clothes">
+                        <td><input type="text" id="cqt" class="form-control"></td>
+                        <td><input type="text" id="cwp" class="form-control"></td>
+                        <td><input type="text" id="cip" class="form-control"></td>
+                        <td><input type="text" id="csp" class="form-control"></td>
+                        <td><button class="btn btn-default" onclick="submitCloth()"><i class="fa fa-check"></i></button></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bold">Duvet</td>
+                        <td><input type="number" id="dqt" class="form-control"></td>
+                        <td><input type="number" id="dwq" class="form-control"></td>
+                        <td><input type="number" id="diq" class="form-control"></td>
+                        <td><input type="number" id="dsq" class="form-control"></td>
+                        <td><button class="btn btn-default" onclick="submitDuve()"><i class="fa fa-check"></i></button></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bold">Bedsheet</td>
+                        <td><input type="number" id="bqt" class="form-control"></td>
+                        <td><input type="number" id="bwq" class="form-control"></td>
+                        <td><input type="number" id="biq" class="form-control"></td>
+                        <td><input type="number" id="bsq" class="form-control"></td>
+                        <td><button class="btn btn-default" onclick="submitBed()"><i class="fa fa-check"></i></button></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bold">Suit</td>
+                        <td><input type="number" id="sqt" class="form-control"></td>
+                        <td><input type="number" id="swq" class="form-control"></td>
+                        <td><input type="number" id="siq" class="form-control"></td>
+                        <td><input type="number" id="ssq" class="form-control"></td>
+                        <td><button class="btn btn-default" onclick="submitSuit()"><i class="fa fa-check"></i></button></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bold">Blanket</td>
+                        <td><input type="number" id="blqt" class="form-control"></td>
+                        <td><input type="number" id="blwq" class="form-control"></td>
+                        <td><input type="number" id="bliq" class="form-control"></td>
+                        <td><input type="number" id="blsq" class="form-control"></td>
+                        <td><button class="btn btn-default" onclick="submitBlanket()"><i class="fa fa-check"></i></button></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bold">Curtain</td>
+                        <td><input type="number" id="cuqt" class="form-control"></td>
+                        <td><input type="number" id="cuwq" class="form-control"></td>
+                        <td><input type="number" id="cuiq" class="form-control"></td>
+                        <td><input type="number" id="cusq" class="form-control"></td>
+                        <td><button class="btn btn-default" onclick="submitCurtain()"><i class="fa fa-check"></i></button></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bold">Rug</td>
+                        <td><input type="number" id="rqt" class="form-control"></td>
+                        <td><input type="number" id="rwq" class="form-control"></td>
+                        <td><input type="number" id="riq" class="form-control"></td>
+                        <td><input type="number" id="rsq" class="form-control"></td>
+                        <td><button class="btn btn-default" onclick="submitRug()"><i class="fa fa-check"></i></button></td>
+                    </tr>
+                </table>
+                <p style="font-weight:bold;">Add a note for the washer (optional)</p>
+                <textarea name="note" id="note" placeholder="Note" class="form-control" cols="30" rows="5"></textarea>
+                <button class="btn btn-default btn-lg btn-block" onclick="submitLaundry()" id="submitLaundry" style="margin-top:10px;">Submit</button>
+            </div>
+            <div class="col-12 text-center loader">
+                <div class="btn btn-default btn-rounded mb-3">
+                    <div class="btn-loader">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <h6 class="d-inline-block text-left mx-2 mb-0 text-normal">Loading Products<br><small class="text-mute">Please wait for a while...</small></h6>
+                </div>
+            </div>
+
+        </div>
+        <div class="footer">
+            <div class="no-gutters">
+                <div class="col-auto mx-auto">
+                    <div class="row no-gutters justify-content-center">
+                        <div class="col-auto">
+                            <a href="../index.html" class="btn btn-link-default">
+                                <i class="material-icons">store_mall_directory</i>
+                            </a>
+                            <center>
+                                <p class="text-mute" style="font-size: 10px; margin-top: -27px;opacity:0.5;">Home</p>
+                            </center>
+                        </div>
+                        <div class="col-auto">
+                            <a href="storetype.html" class="btn btn-link-default">
+                                <i class="material-icons">toc</i>
+                            </a>
+                            <center>
+                                <p class="text-mute" style="font-size: 10px; margin-top: -27px;opacity: 0.5">Category</p>
+                            </center>
+                        </div>
+                        <div class="col-auto">
+                            <a href="cart.html" class="btn btn-default shadow centerbutton">
+                                <i class="material-icons">local_mall</i>
+                            </a>
+                            <center>
+                                <p class="text-mute" style="font-size: 10px; margin-top: -6px;opacity: 0.5">Cart</p>
+                            </center>
+                        </div>
+                        <div class="col-auto">
+                            <a href="../location.html" class="btn btn-link-default">
+                                <i class="material-icons">room</i>
+                            </a>
+                            <center>
+                                <p class="text-mute" style="font-size: 10px; margin-top: -27px;opacity: 0.5">Location</p>
+                            </center>
+                        </div>
+                        <div class="col-auto">
+                            <a href="../profile.html" class="btn btn-link-default">
+                                <i class="material-icons">account_circle</i>
+                            </a>
+                            <center>
+                                <p class="text-mute" style="font-size: 10px; margin-top: -27px; opacity: 0.5"> Profile</p>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jquery, popper and bootstrap js -->
+    <script src="https://kit.fontawesome.com/71ba3dee2b.js" crossorigin="anonymous"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="vendor/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- swiper js -->
+    <script src="vendor/swiper/js/swiper.min.js"></script>
+
+    <!-- nouislider js -->
+    <script src="vendor/nouislider/nouislider.min.js"></script>
+
+    <!-- chosen multiselect js -->
+    <script src="vendor/chosen_v1.8.7/chosen.jquery.min.js"></script>
+
+    <!-- template custom js -->
+    <script src="js/main.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/profile.js"></script>
+    <script src="js/loc.js"></script>
+    <script src="js/notification.js"></script>
+    <script src="cordova.js"></script>
+    <script src="js/share.js"></script>
+    <script src="js/laundry.js"></script>
+    <!-- page level script -->
+    <script>
+        window.load = fetchCloth();
+        var getUrlParameter = function getUrlParameter(sParam) {
+            var sPageURL = window.location.search.substring(1),
+                sURLVariables = sPageURL.split('&'),
+                sParameterName,
+                i;
+
+            for (i = 0; i < sURLVariables.length; i++) {
+                sParameterName = sURLVariables[i].split('=');
+
+                if (sParameterName[0] === sParam) {
+                    return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+                }
+            }
+        };
+        var pageno = getUrlParameter('page');
+        if (pageno === null || pageno === undefined) {
+            pageno = 1;
+        } else {
+            document.getElementById("pagno").innerHTML = 'page ' + pageno;
+        }
+        morepage = parseInt(pageno) + 1;
+        document.getElementById("loadmore").setAttribute("href", "market.html?page=" + morepage);
+        if (pageno > 1) {
+            lesspage = parseInt(pageno) - 1;
+            document.getElementById("loadless").setAttribute("href", "market.html?page=" + lesspage);
+        } else if (pageno == 1) {
+            document.getElementById("loadless").setAttribute("href", "#");
+        } else {
+            lesspage = 1;
+            document.getElementById("loadless").setAttribute("href", "market.html?page=" + lesspage);
+        }
+
+
+        if (pageno == 1) {
+            $(".one").addClass("active");
+        } else if (pageno == 2) {
+            $(".two").addClass("active");
+        } else if (pageno == 3) {
+            $(".three").addClass("active");
+        } else if (pageno == 4) {
+            $(".four").addClass("active");
+        } else if (pageno == 5) {
+            $(".five").addClass("active");
+        } else if (pageno == 6) {
+            $(".six").addClass("active");
+        } else if (pageno == 7) {
+            $(".seven").addClass("active");
+        } else if (pageno > 7) {
+            $(".more").addClass("active");
+        } else {
+            $(".page-link").removeClass("active");
+        }
+
+
+        function goBack() {
+            window.history.back();
+        }
+
+        $("#searchBtn").click(function(e) {
+            e.preventDefault();
+            key = $("#searchKey").val();
+            if (key == "") {
+                alert('Enter search input');
+            } else {
+                window.location = 'market-search.html?key=' + key;
+            }
+        });
+    </script>
+
+</body>
+
+</html>

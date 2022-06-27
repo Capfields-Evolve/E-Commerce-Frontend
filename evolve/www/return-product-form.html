@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en" class="pink-theme">
+
+
+<!-- Mirrored from maxartkiller.com/website/GoMobileUX/gofruit/signup.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 10 Nov 2019 18:18:22 GMT -->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="Maxartkiller">
+
+    <title>Return · Evolve</title>
+
+    <!-- Material design icons CSS -->
+    <link rel="stylesheet" href="vendor/materializeicon/material-icons.css">
+
+    <!-- Roboto fonts CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap-4.3.1/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Swiper CSS -->
+    <link href="vendor/swiper/css/swiper.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body style="background: none;">
+    <div class="row no-gutters vh-100 loader-screen">
+        <div class="col align-self-center text-white text-center">
+            <img src="img/logo.png" height="50px" alt="logo">
+            <h1><span class="font-weight-light">Capfields</span>Evolve</h1>
+            <div class="laoderhorizontal">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <div class="row no-gutters vh-100 proh bg-template">
+        <!--<img src="img/apple.png" alt="logo" class="apple right-image align-self-center">-->
+        <div class="col align-self-center px-3  text-center">
+            <img src="img/logo.png" alt="logo" class="logo-small">
+            <h2 class="text-white"><span class="font-weight-light">Return Product</h2>
+            <form class="form-signin shadow">
+                 <div class="form-group float-label active">
+                    <input type="text" id="reason" class="form-control" required>
+                    <label class="form-control-label">Reason</label>
+                </div>
+                
+                <div class="form-group float-label active">
+                    <select type="text" class="form-control" id="history" required>
+                        <option value="">Select Product</option>
+                    </select>
+                    
+                </div>
+                <div class="form-group my-4 text-left">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" onclick="remDis()" id="rememberme">
+                        <label class="custom-control-label" for="rememberme">I accept <a href="return-policy.html">Terms and Condition</a></label>
+                    </div>
+                </div>
+               
+                <div class="row">
+                    <div class="col-auto">
+                        <button class="btn btn-lg btn-default btn-rounded shadow" id="returnProduct" disabled><span>GO</span><i class="material-icons">arrow_forward</i></button>
+                </form>
+        </div>
+
+    </div>
+    <center><a href="index.html"><button class="btn btn-default btn-block btn-rounded shadow">Return Home</button></a></center>
+
+    <!-- jquery, popper and bootstrap js -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="vendor/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- swiper js -->
+    <script src="https://kit.fontawesome.com/71ba3dee2b.js" crossorigin="anonymous"></script>
+    <script src="vendor/swiper/js/swiper.min.js"></script>
+
+    <!-- template custom js -->
+    <script src="js/main.js"></script>
+    <script src="login.js"></script>
+    <script src="js/profile.js"></script>
+    <script>
+        $.ajax({
+            url: "https://evolve.capfields.com.ng/user_app/cart-history.php",
+            type: "POST",
+            headers: {
+                Accept: 'application/json'
+            },
+            data: {
+                email: email,
+                token: token
+            },
+            success: function(res) {
+                console.log(res)
+                msg = res.message;
+                if (msg == 'success') {
+                    cart = '';
+                    $.each(res.data, function(key, value) {
+                        cart += '<option value="' + value.p_code + '">' + value.product + '</option>';
+                    });
+                    $("#history").append(cart);
+                    //$(".loader").addClass("hidden");
+                }
+            },
+            error: function(res) {
+                console.log(res)
+            }
+        });
+
+        function remDis() {
+            $("#returnProduct").prop("disabled", false);
+        }
+
+        //return product
+        $("#returnProduct").click(function(e) {
+            document.getElementById("returnProduct").innerHTML = '<i class="fa fa-circle-o-notch fa-spin" style="font-size:15px"></i>';
+            e.preventDefault();
+            reason = $("#reason").val();
+            product = $("#history").val();
+            if (reason == "") {
+                alert('Enter your reason');
+                document.getElementById("returnProduct").innerHTML = '<span>GO</span><i class="material-icons">arrow_forward</i>';
+            } else if (product == "") {
+                alert('Select product');
+                document.getElementById("returnProduct").innerHTML = '<span>GO</span><i class="material-icons">arrow_forward</i>';
+            } else {
+                $.ajax({
+                    url: "https://evolve.capfields.com.ng/user_app/return-product.php",
+                    type: "POST",
+                    headers: {
+                        Accept: 'application/json'
+                    },
+                    data: {
+                        email: email,
+                        token: token,
+                        reason: reason,
+                        product: product
+                    },
+                    success: function(res) {
+                        console.log(res)
+                        msg = res.message;
+                        if (msg == 'success') {
+                            alert('Product submitted successfully');
+                            location.href = 'profile.html';
+                        } else {
+                            alert(msg);
+                            document.getElementById("returnProduct").innerHTML = '<span>GO</span><i class="material-icons">arrow_forward</i>';
+                        }
+                    },
+                    error: function(res) {
+                        console.log(res)
+                        alert('Error in connection');
+                        document.getElementById("returnProduct").innerHTML = '<span>GO</span><i class="material-icons">arrow_forward</i>';
+                    }
+                });
+            }
+        })
+    </script>
+</body>
+
+</html>

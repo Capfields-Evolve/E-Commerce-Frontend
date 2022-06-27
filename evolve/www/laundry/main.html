@@ -1,0 +1,696 @@
+<!doctype html>
+<html lang="en" class="blue-theme">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="Maxartkiller">
+
+    <title>Select Store</title>
+
+    <!-- Material design icons CSS -->
+    <link rel="stylesheet" href="vendor/materializeicon/material-icons.css">
+
+    <!-- Roboto fonts CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap-4.3.1/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Swiper CSS -->
+    <link href="vendor/swiper/css/swiper.min.css" rel="stylesheet">
+
+    <!-- Chosen multiselect CSS -->
+    <link href="vendor/chosen_v1.8.7/chosen.min.css" rel="stylesheet">
+
+    <!-- nouislider CSS -->
+    <link href="vendor/nouislider/nouislider.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        .textwrap {
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 13ch;
+        }
+        
+        .storetextwrap {
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 15ch;
+        }
+        
+        .infoslide {
+            display: none;
+            z-index: 200;
+            border: none;
+            box-shadow: darkgray;
+        }
+        
+        .content {
+            text-align: center;
+            color: black;
+        }
+        
+        .searchform {
+            border-radius: 5px;
+            background: white;
+            padding: 10px;
+            border: 1px solid #FF0068;
+            text-align: left;
+            margin-top: 20px;
+        }
+        
+        .billbtn {
+            background: linear-gradient(97deg, red 20%, darkred 60%);
+            color: white;
+            padding: 10px;
+            width: 50px;
+            border: none;
+            border-radius: 100px;
+            height: 50px;
+            font-weight: bold;
+            text-transform: capitalize;
+            letter-spacing: 1px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="row no-gutters vh-100 loader-screen">
+        <div class="col align-self-center text-white text-center">
+            <img src="../img/logo.png" height="50px" alt="logo">
+            <h3><span class="font-weight-light">Evolve</span>Laundry</h3>
+            <div class="laoderhorizontal">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar">
+        <div class="text-center">
+            <div class="figure-menu shadow">
+                <figure><img src="../img/userpic.png" alt=""></figure>
+            </div>
+            <h5 class="mb-1" id="customerName"></h5>
+            <!--<p class="text-mute small">Abuja, Nigeria</p>-->
+        </div>
+        <br>
+        <div class="row mx-0">
+            <div class="col">
+                <div class="card mb-3 border-0 shadow-sm bg-template-light">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <p class="text-secondary small mb-0">Available Balance</p>
+                                <h6 class="text-dark my-0" id="walletBalance"></h6>
+                            </div>
+                            <div class="col-auto">
+                                <a href="../fundwallet.html"><button class="btn btn-default button-rounded-36 shadow"><i class="material-icons">add</i></button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h5 class="subtitle text-uppercase"><span>Menu</span></h5>
+                <div class="list-group main-menu">
+                    <a href="main.html" class="list-group-item list-group-item-action active">Home</a>
+                    <a href="#" class="list-group-item list-group-item-action">Track Delivery</a>
+                    <a href="#" class="list-group-item list-group-item-action">Confirm Delivery</a>
+                    <a href="#" class="list-group-item list-group-item-action">Become a member</a>
+                    <a href="#" class="list-group-item list-group-item-action">Repeat Order</a>
+                    <a href="../transfer.html" class="list-group-item list-group-item-action">Wallet</a>
+                    <a href="#" class="list-group-item list-group-item-action">Report</a>
+                    <a href="#" id="shareBtn" class="list-group-item list-group-item-action">Share App</a>
+                    <a href="#" onclick="logout()" class="list-group-item list-group-item-action mt-4">Logout</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="wrapper">
+        <div class="header">
+            <div class="row no-gutters">
+                <div class="col-auto">
+                    <button class="btn  btn-link text-dark menu-btn"><img src="img/menu.png" alt=""><span class="new-notification"></span></button>
+                </div>
+                <div class="col text-center"><img src="img/logo-header.png" alt="" class="header-logo"></div>
+                <div class="col-auto">
+                    <a href="profile.html" class="btn  btn-link text-dark"><i class="material-icons">account_circle</i></a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+
+            <h6 class="subtitle"><span></span></h6>
+            <div class="row">
+                <!-- Swiper -->
+                <!--<div class="col-xl-12">-->
+                <div class="swiper-container news-slide">
+                    <div class="swiper-wrapper">
+
+                        <div class="swiper-slide">
+                            <div class="card shadow-sm border-0 bg-dark text-white">
+                                <figure class="background">
+                                    <img src="img/slides/1.png" style="height: 100%;width:100%;" alt="">
+                                </figure>
+
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card shadow-sm border-0 bg-dark text-white">
+                                <figure class="background">
+                                    <img src="img/slides/2.png" style="height: 100%;width:100%;" alt="">
+                                </figure>
+
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card shadow-sm border-0 bg-dark text-white">
+                                <figure class="background">
+                                    <img src="img/slides/3.png" style="height: 100%;width:100%;" alt="">
+                                </figure>
+
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card shadow-sm border-0 bg-dark text-white">
+                                <figure class="background">
+                                    <img src="img/slides/4.png" style="height: 100%;width:100%;" alt="">
+                                </figure>
+
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card shadow-sm border-0 bg-dark text-white">
+                                <figure class="background">
+                                    <img src="img/slides/5.png" style="height: 100%;width:100%;" alt="">
+                                </figure>
+
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card shadow-sm border-0 bg-dark text-white">
+                                <figure class="background">
+                                    <img src="img/slides/6.png" style="height: 100%;width:100%;" alt="">
+                                </figure>
+
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card shadow-sm border-0 bg-dark text-white">
+                                <figure class="background">
+                                    <img src="img/slides/7.png" style="height: 100%;width:100%;" alt="">
+                                </figure>
+
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card shadow-sm border-0 bg-dark text-white">
+                                <figure class="background">
+                                    <img src="img/slides/8.png" style="height: 100%;width:100%;" alt="">
+                                </figure>
+
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card shadow-sm border-0 bg-dark text-white">
+                                <figure class="background">
+                                    <img src="img/slides/9.png" style="height: 100%;width:100%;" alt="">
+                                </figure>
+
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card shadow-sm border-0 bg-dark text-white">
+                                <figure class="background">
+                                    <img src="img/slides/10.png" style="height: 100%;width:100%;" alt="">
+                                </figure>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <center>
+                <p style="font-size: 13px; color: grey;margin-top:-40px">Swipe left to see more</p>
+            </center>
+            <div class="row justify-content-center">
+                <div class="col-6">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <p align="center" style="color:grey">Click here if you are</p>
+                            <a href="index.html"><button class="btn btn-default btn-block btn-rounded shadow-sm" style="text-transform: capitalize;">a member</button></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <p align="center" style="color:grey">Click here to pay as </p>
+                            <a href="index.html"><button class="btn btn-default btn-block btn-rounded shadow-sm" style="text-transform: capitalize;">you wash</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--<div class="card shadow-xs" style="background: whitesmoke;border:none;">
+                <div class="card-body">
+                    <center>
+                        <p style="color:grey;font-weight:bold;font-weight:20px;margin-bottom:20px;">Earn 3% cashback when you recharge on Capfields Pay</p>
+                        <div class="row">
+                            <div class="col-3">
+                                <a href="bill/index.html"><button class="btn billbtn shadow-sm"><i class="fa fa-phone"></i></button></a>
+                                <small style="font-weight: 600;margin-top:5px;">Airtime</small>
+                            </div>
+                            <div class="col-3">
+                                <a href="bill/index.html"><button class="btn billbtn shadow-sm"><i class="fa fa-wifi"></i></button></a>
+                                <small style="font-weight: 600;margin-top:5px;">Data</small>
+                            </div>
+                            <div class="col-3">
+                                <a href="bill/index.html"><button class="btn billbtn shadow-sm"><i class="fa fa-tv"></i></button></a>
+                                <small style="font-weight: 600;margin-top:5px;">Cable TV</small>
+                            </div>
+                            <div class="col-3">
+                                <a href="bill/index.html"><button class="btn billbtn shadow-sm"><i class="fa fa-money"></i></button></a>
+                                <small style="font-weight: 600;margin-top:5px;">Transfer</small>
+                            </div>
+                        </div>
+                    </center>
+                </div>
+            </div>-->
+            <h6 style="font-size: 13px; color: grey" class="subtitle">Need items from Market/Stores/Pharmacies/Fastfood aroung you?</h6>
+            <div class="row">
+                <!-- Swiper -->
+                <div class="swiper-container small-slide">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="../store-select.html?type=foodmarket&link=market.html">
+                                <div class="card shadow-sm border-0" onclick="location.href='../store-select.html?type=foodmarket&link=market.html'">
+                                    <div class="card-body">
+                                        <div class="row no-gutters h-100">
+                                            <img src="../img/tomato.png" alt="" height="100px" style="margin-right:10px;margin-top:35px" class="small-slide-right">
+                                            <div class="col-8">
+                                                <!--<button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>-->
+                                                <a href="store-select.html?type=foodmarket&link=market.html" class="text-dark mb-1 mt-2 h6 d-block">Market </a>
+                                                <p class="text-secondary small"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="../store-select.html?type=supermarket&link=store.html">
+                                <div class="card shadow-sm border-0" onclick="location.href='../store-select.html?type=supermarket&link=store.html'">
+                                    <div class="card-body">
+                                        <div class="row no-gutters h-100">
+                                            <img src="../img/shopping11.png" height="100px" style="margin-right:10px;margin-top:35px" alt="" class="small-slide-right">
+                                            <div class="col-8">
+                                                <!--<button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite</i></button>-->
+                                                <a href="store-select.html?type=supermarket&link=store.html" class="text-dark mb-1 mt-2 h6 d-block">Stores</a>
+                                                <p class="text-secondary small"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="swiper-container small-slide">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="../store-select.html?type=drugs&link=health.html">
+                                <div class="card shadow-sm border-0" onclick="location.href='../store-select.html?type=drugs&link=health.html'">
+                                    <div class="card-body">
+                                        <div class="row no-gutters h-100">
+                                            <img src="../img/pills.png" height="70px" style="margin-right:10px;margin-top:35px" alt="" class="small-slide-right">
+                                            <div class="col-8">
+                                                <!--<button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>-->
+                                                <a href="store-select.html?type=drugs&link=health.html" class="text-dark mb-1 mt-2 h6 d-block">Health</a>
+                                                <p class="text-secondary small"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="../store-select.html?type=fastfood&link=fastfood.html">
+                                <div class="card shadow-sm border-0" onclick="location.href='.../store-select.html?type=fastfood&link=fastfood.html'">
+                                    <div class="card-body">
+                                        <div class="row no-gutters h-100">
+                                            <img src="../img/fastfoodnew.png" height="100px" style="margin-right:10px;margin-top:35px" alt="" class="small-slide-right">
+                                            <div class="col-9">
+                                                <!--<button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>-->
+                                                <a href="store-select.html?type=fastfood&link=fastfood.html" class="text-dark mb-1 mt-2 h6 d-block">Fast Food</a>
+                                                <p class="text-secondary small"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="footer">
+            <div class="no-gutters">
+                <div class="col-auto mx-auto">
+                    <div class="row no-gutters justify-content-center">
+                        <div class="col-auto">
+                            <a href="../index.html" class="btn btn-link-default">
+                                <i class="material-icons">store_mall_directory</i>
+                            </a>
+                            <center>
+                                <p class="text-mute" style="font-size: 10px; margin-top: -27px;opacity:0.5;">Home</p>
+                            </center>
+                        </div>
+                        <div class="col-auto">
+                            <a href="storetype.html" class="btn btn-link-default">
+                                <i class="material-icons">toc</i>
+                            </a>
+                            <center>
+                                <p class="text-mute" style="font-size: 10px; margin-top: -27px;opacity: 0.5">Category</p>
+                            </center>
+                        </div>
+                        <div class="col-auto">
+                            <a href="cart.html" class="btn btn-default shadow centerbutton">
+                                <i class="material-icons">local_mall</i>
+                            </a>
+                            <center>
+                                <p class="text-mute" style="font-size: 10px; margin-top: -6px;opacity: 0.5">Cart</p>
+                            </center>
+                        </div>
+                        <div class="col-auto">
+                            <a href="../location.html" class="btn btn-link-default">
+                                <i class="material-icons">room</i>
+                            </a>
+                            <center>
+                                <p class="text-mute" style="font-size: 10px; margin-top: -27px;opacity: 0.5">Location</p>
+                            </center>
+                        </div>
+                        <div class="col-auto">
+                            <a href="../profile.html" class="btn btn-link-default">
+                                <i class="material-icons">account_circle</i>
+                            </a>
+                            <center>
+                                <p class="text-mute" style="font-size: 10px; margin-top: -27px; opacity: 0.5"> Profile</p>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- jquery, popper and bootstrap js -->
+    <script src="https://kit.fontawesome.com/71ba3dee2b.js" crossorigin="anonymous"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="vendor/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- swiper js -->
+    <script src="vendor/swiper/js/swiper.min.js"></script>
+
+    <!-- nouislider js -->
+    <script src="vendor/nouislider/nouislider.min.js"></script>
+
+    <!-- chart js -->
+    <script src="vendor/chartjs/Chart.min.js"></script>
+    <script src="vendor/chartjs/utils.js"></script>
+
+    <!-- chosen multiselect js -->
+    <script src="vendor/chosen_v1.8.7/chosen.jquery.min.js"></script>
+
+    <!-- template custom js -->
+    <script src="js/main.js"></script>
+
+    <script src="js/loc.js"></script>
+    <script src="js/notification.js"></script>
+    <script src="js/profile.js"></script>
+    <script src="cordova.js"></script>
+    <script src="js/share.js"></script>
+    <script>
+        $.ajax({
+            url: "https://evolve.capfields.com.ng/user_app/trending.php",
+            type: "POST",
+            headers: {
+                Accept: 'application/json'
+            },
+            data: {
+                email: email,
+                token: token
+            },
+            success: function(res) {
+                console.log(res)
+                trend1 = res.trend[0];
+                document.getElementById("image1").setAttribute("src", "img/slides/1.png");
+                document.getElementById("link1").setAttribute("href", "store-market.html?code=" + trend1.store_code);
+                $("#desc1").text(trend1.note);
+                $("#name1").text(trend1.store_name);
+
+                trend2 = res.trend[1];
+                document.getElementById("image2").setAttribute("src", "https://evolve.capfields.com.ng/m/stores/" + trend2.photo);
+                document.getElementById("link2").setAttribute("href", "store-market.html?code=" + trend2.store_code);
+                $("#desc2").text(trend2.note);
+                $("#name2").text(trend2.store_name);
+
+                trend3 = res.trend[2];
+                document.getElementById("image3").setAttribute("src", "https://evolve.capfields.com.ng/m/stores/" + trend3.photo);
+                document.getElementById("link3").setAttribute("href", "store-market.html?code=" + trend3.store_code);
+                $("#desc3").text(trend3.note);
+                $("#name3").text(trend3.store_name);
+
+                trend4 = res.trend[3];
+                document.getElementById("image4").setAttribute("src", "https://evolve.capfields.com.ng/m/stores/" + trend4.photo);
+                document.getElementById("link4").setAttribute("href", "store-market.html?code=" + trend4.store_code);
+                $("#desc4").text(trend4.note);
+                $("#name4").text(trend4.store_name);
+
+                trend5 = res.trend[4];
+                document.getElementById("image5").setAttribute("src", "https://evolve.capfields.com.ng/m/stores/" + trend5.photo);
+                document.getElementById("link5").setAttribute("href", "store-market.html?code=" + trend5.store_code);
+                $("#desc5").text(trend5.note);
+                $("#name5").text(trend5.store_name);
+
+                trend6 = res.trend[5];
+                console.log(res.trend[5])
+                document.getElementById("image6").setAttribute("src", "https://evolve.capfields.com.ng/m/stores/" + trend6.photo);
+                document.getElementById("link6").setAttribute("href", "store-market.html?code=" + trend6.store_code);
+                $("#desc6").text(trend6.note);
+                $("#name6").text(trend6.store_name);
+
+                trend7 = res.trend[6];
+                document.getElementById("image7").setAttribute("src", "https://evolve.capfields.com.ng/m/stores/" + trend7.photo);
+                document.getElementById("link7").setAttribute("href", "store-market.html?code=" + trend7.store_code);
+                $("#desc7").text(trend7.note);
+                $("#name7").text(trend7.store_name);
+
+                trend8 = res.trend[7];
+                document.getElementById("image8").setAttribute("src", "https://evolve.capfields.com.ng/m/stores/" + trend8.photo);
+                document.getElementById("link8").setAttribute("href", "store-market.html?code=" + trend8.store_code);
+                $("#desc8").text(trend8.note);
+                $("#name8").text(trend8.store_name);
+
+                trend9 = res.trend[8];
+                document.getElementById("image9").setAttribute("src", "https://evolve.capfields.com.ng/m/stores/" + trend9.photo);
+                document.getElementById("link9").setAttribute("href", "store-market.html?code=" + trend9.store_code);
+                $("#desc9").text(trend9.note);
+                $("#name9").text(trend9.store_name);
+
+                trend10 = res.trend[9];
+                document.getElementById("image10").setAttribute("src", "https://evolve.capfields.com.ng/m/stores/" + trend10.photo);
+                document.getElementById("link10").setAttribute("href", "store-market.html?code=" + trend10.store_code);
+                $("#desc10").text(trend10.note);
+                $("#name10").text(trend10.store_name);
+                /*trend = '';
+                $.each(res.trend, function(key, value) {
+                    trend += '<div class="swiper-slide" style="width: 187.5px;">';
+                    trend += '<div class="card shadow-sm border-0 bg-dark text-white">';
+                    trend += '<figure class="background">';
+                    trend += '<img src="https://evolve.capfields.com.ng/m/stores/' + value.photo + '"style="width:100%;height:100%" alt="">';
+                    trend += '</figure>';
+                    trend += '<div class="card-body">';
+                    trend += '<a href="store-market.html?code=' + value.store_code + '"class="btn btn-default button-rounded-36 shadow-sm float-bottom-right"><i class="material-icons md-18">arrow_forward</i></a>';
+                    trend += '<h5 class="">' + value.store_name + '</h5>';
+                    trend += '<p class="text-mute">' + value.note + '</p>';
+                    trend += '</div>';
+                    trend += '</div>';
+                    trend += '</div>';
+                });
+                $("#trend").append(trend);*/
+            },
+            error: function(res) {
+                console.log(res)
+            }
+        });
+
+        var searchProduct = () => {
+            $("#searchProduct").text('');
+            searchkey = $("#searchkey").val();
+            if (searchkey.length > 2) {
+                $.ajax({
+                    url: "https://evolve.capfields.com.ng/user_app/indexsearch.php",
+                    type: "POST",
+                    headers: {
+                        Accept: 'application/json'
+                    },
+                    data: {
+                        email: email,
+                        token: token,
+                        key: searchkey
+                    },
+                    success: function(res) {
+                        console.log(res)
+                        msg = res.message;
+                        if (msg === 'success') {
+                            product = '';
+                            $.each(res.data, function(key, value) {
+                                product += '<div class="col-6 col-md-4 col-lg-3 col-xl-2">';
+                                product += '<div class="card shadow-sm border-0 mb-4">';
+                                product += '<div class="card-body">';
+                                //product += '<button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>';
+                                product += '<a href="product-details.html?type=index.html&code=' + value.product_code + '"><figure class="product-image"><img src="https://evolve.capfields.com.ng/view/products/' + value.photo + '" alt="" class=""></figure></a>';
+                                product += '<a href="product-details.html?type=index.html&code=' + value.product_code + '" class="text-dark mb-1 mt-2 h6 d-block textwrap">' + value.product + '</a>';
+                                product += '<p class="text-secondary small mb-2 storetextwrap">' + value.store_name + '</p>';
+                                product += '<h5 class="text-success font-weight-normal mb-0">&#8358;' + parseInt(value.price - value.discount) + '</h5>';
+                                product += '<button class="btn btn-default button-rounded-36 shadow-sm float-bottom-right" onclick="$.ajax({url: \'https://evolve.capfields.com.ng/user_app/addtocart.php\', type: \'POST\', headers: {Accept: \'application/json\'}, data: {email: email, token: token, pcode: ' + value.product_code + '}, success: function(res){status=res.status; msg=res.message; if(status==\'true\'){alert(msg)}else if(msg==\'false\'){location.href=\'location.html\'} else if(msg==\'Error\' || msg==\'error\'){location.replace(\'login.html\')} else{alert(msg)}}, error: function(res){alert(\'Error in connection\')}})"><i class="material-icons md-18">shopping_cart</i></button>';
+                                product += ' </div>';
+                                product += ' </div>';
+                                product += ' </div>';
+                            });
+                            $("#searchProduct").append(product);
+                        }
+                    },
+                    error: function(res) {
+                        console.log(res)
+                    }
+                });
+            }
+        }
+
+        //all products
+        $.ajax({
+            url: "https://evolve.capfields.com.ng/user_app/products.php",
+            type: "POST",
+            headers: {
+                Accept: 'application/json'
+            },
+            data: {
+                email: email,
+                token: token
+            },
+            success: function(res) {
+                console.log(res)
+                msg = res.message;
+                if (msg == 'success') {
+                    product = '';
+                    $.each(res.data, function(key, value) {
+                        product += '<div class="col-6 col-md-4 col-lg-3 col-xl-2">';
+                        product += '<div class="card shadow-sm border-0 mb-4">';
+                        product += '<div class="card-body">';
+                        //product += '<button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>';
+                        product += '<a href="product-details.html?type=index.html&code=' + value.product_code + '"><figure class="product-image"><img src="https://evolve.capfields.com.ng/view/products/' + value.photo + '" alt="" class=""></figure></a>';
+                        product += '<a href="product-details.html?type=index.html&code=' + value.product_code + '" class="text-dark mb-1 mt-2 h6 d-block textwrap">' + value.product + '</a>';
+                        product += '<p class="text-secondary small mb-2 storetextwrap">' + value.store_name + '</p>';
+                        product += '<h5 class="text-success font-weight-normal mb-0">&#8358;' + parseInt(value.price - value.discount) + '</h5>';
+                        product += '<button class="btn btn-default button-rounded-36 shadow-sm float-bottom-right" onclick="$.ajax({url: \'https://evolve.capfields.com.ng/user_app/addtocart.php\', type: \'POST\', headers: {Accept: \'application/json\'}, data: {email: email, token: token, pcode: ' + value.product_code + '}, success: function(res){status=res.status; msg=res.message; if(status==\'true\'){alert(msg)}else if(msg==\'false\'){location.href=\'location.html\'} else if(msg==\'Error\' || msg==\'error\'){location.replace(\'login.html\')} else{alert(msg)}}, error: function(res){alert(\'Error in connection\')}})"><i class="material-icons md-18">shopping_cart</i></button>';
+                        product += ' </div>';
+                        product += ' </div>';
+                        product += ' </div>';
+                    });
+                    $("#indexProducts").append(product);
+                }
+            },
+            error: function(res) {
+                console.log(res)
+            }
+        });
+        var getUrlParameter = function getUrlParameter(sParam) {
+            var sPageURL = window.location.search.substring(1),
+                sURLVariables = sPageURL.split('&'),
+                sParameterName,
+                i;
+
+            for (i = 0; i < sURLVariables.length; i++) {
+                sParameterName = sURLVariables[i].split('=');
+
+                if (sParameterName[0] === sParam) {
+                    return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+                }
+            }
+        };
+        var show = getUrlParameter('show');
+        if (show != null) {
+            $("document").ready(function() {
+                $(".infoslide").fadeIn(2000);
+                $(".infoslide").delay(5000).fadeOut(1000);
+                //$(".infoslide").fadeOut(3000);
+                //alert('WELCOME TO CAPFIELDS EVOLVE. Win 400 naira recharge card after your first order! You no longer need to go to the Market / pharmacy/ stores and fastfood yourself. Select items you wish to buy , check out and we deliver to your door step . Payment on delivery is accepted. Relax!');
+            });
+        }
+
+        function cancelShow() {
+            $(".infoslide").remove();
+        }
+        $(window).on('load', function() {
+            //swiper slider carousel 
+            var swiper = new Swiper('.small-slide', {
+                slidesPerView: 'auto',
+                spaceBetween: 0,
+            });
+
+            var swiper = new Swiper('.news-slide', {
+                slidesPerView: 5,
+                spaceBetween: 0,
+                pagination: {
+                    el: '.swiper-pagination',
+                },
+                breakpoints: {
+                    1024: {
+                        slidesPerView: 4,
+                        spaceBetween: 0,
+                    },
+                    768: {
+                        slidesPerView: 3,
+                        spaceBetween: 0,
+                    },
+                    640: {
+                        slidesPerView: 2,
+                        spaceBetween: 0,
+                    },
+                    320: {
+                        slidesPerView: 2,
+                        spaceBetween: 0,
+                    }
+                }
+            });
+            setTimeout(function() {
+                $('.notification').addClass('active');
+                setTimeout(function() {
+                    $('.notification').removeClass('active');
+                }, 3500);
+            }, 500);
+            $('.closenotification').on('click', function() {
+                $(this).closest('.notification').removeClass('active')
+            });
+        });
+    </script>
+
+</body>
+
+</html>

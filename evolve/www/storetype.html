@@ -1,0 +1,588 @@
+<!doctype html>
+<html lang="en" class="pink-theme">
+
+
+<!-- Mirrored from maxartkiller.com/website/GoMobileUX/gofruit/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 10 Nov 2019 18:16:28 GMT -->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="Maxartkiller">
+
+    <title>Evolve</title>
+
+    <!-- Material design icons CSS -->
+    <link rel="stylesheet" href="vendor/materializeicon/material-icons.css">
+
+    <!-- Roboto fonts CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap-4.3.1/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Swiper CSS -->
+    <link href="vendor/swiper/css/swiper.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        .textwrap {
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 13ch;
+        }
+        
+        .storetextwrap {
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 15ch;
+        }
+    </style>
+    <!--style for slide starts here-->
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Verdana, sans-serif;
+        }
+        
+        .mySlides {
+            display: none;
+        }
+        
+        img {
+            vertical-align: middle;
+        }
+        /* Slideshow container */
+        
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+        }
+        /* Caption text */
+        
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+        /* Number text (1/3 etc) */
+        
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+        /* The dots/bullets/indicators 
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}*/
+        
+        .active {
+            background-color: #717171;
+        }
+        /* Fading animation */
+        
+        .slider {
+            -webkit-animation-name: slider;
+            -webkit-animation-duration: 1.5s;
+            animation-name: slider;
+            animation-duration: 1.5s;
+        }
+        
+        @-webkit-keyframes slider {
+            from {
+                opacity: .4
+            }
+            to {
+                opacity: 1
+            }
+        }
+        
+        @keyframes slider {
+            from {
+                opacity: .4
+            }
+            to {
+                opacity: 1
+            }
+        }
+        /* On smaller screens, decrease text size */
+        
+        @media only screen and (max-width: 300px) {
+            .text {
+                font-size: 11px
+            }
+        }
+    </style>
+    <!--slide for main slide ends here-->
+</head>
+
+<body>
+    <div class="row no-gutters vh-100 loader-screen">
+        <div class="col align-self-center text-white text-center">
+            <img src="img/logo.png" height="50px" alt="logo">
+            <h3><span class="font-weight-light">Capfields</span>Evolve</h3>
+            <div class="laoderhorizontal">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar">
+        <div class="text-center">
+            <div class="figure-menu shadow">
+                <figure><img src="img/userpic.png" alt=""></figure>
+            </div>
+            <h5 class="mb-1" id="customerName"></h5>
+            <!--<p class="text-mute small">Abuja, Nigeria</p>-->
+        </div>
+        <br>
+        <div class="row mx-0">
+            <div class="col">
+                <div class="card mb-3 border-0 shadow-sm bg-template-light">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <p class="text-secondary small mb-0">Available Balance</p>
+                                <h6 class="text-dark my-0" id="walletBalance"></h6>
+                            </div>
+                            <div class="col-auto">
+                                <a href="fundwallet.html"><button class="btn btn-default button-rounded-36 shadow"><i class="material-icons">add</i></button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h5 class="subtitle text-uppercase"><span>Menu</span></h5>
+                <div class="list-group main-menu">
+                    <a href="index.html" class="list-group-item list-group-item-action active">Home</a>
+                    <a href="notification.html" class="list-group-item list-group-item-action">Notification <span class="badge badge-dark text-white" id="notCounter"></span></a>
+                    <a href="transfer.html" class="list-group-item list-group-item-action">Wallet Transfer</a>
+                    <a href="vendor.html" class="list-group-item list-group-item-action">Producers</a>
+                    <a href="farmonline.html" class="list-group-item list-group-item-action">Farm online</a>
+                    <a href="my-order.html" class="list-group-item list-group-item-action">My Order</a>
+                    <a href="profile.html" class="list-group-item list-group-item-action">My Profile</a>
+                    <a href="setting.html" class="list-group-item list-group-item-action">Settings</a>
+                    <a href="#" id="shareBtn" class="list-group-item list-group-item-action">Share App</a>
+                    <a href="#" onclick="logout()" class="list-group-item list-group-item-action mt-4">Logout</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="wrapper">
+        <div class="header">
+            <div class="row no-gutters">
+                <div class="col-auto">
+                    <button class="btn  btn-link text-dark menu-btn"><img src="img/menu.png" alt=""><span class="new-notification"></span></button>
+                </div>
+                <div class="col text-center"><img src="img/logo-header.png" alt="" class="header-logo"></div>
+                <div class="col-auto">
+                    <a href="profile.html" class="btn  btn-link text-dark"><i class="material-icons">account_circle</i></a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <!--<input type="text" class="form-control form-control-lg search my-3" placeholder="Search">-->
+
+            <h6 class="subtitle"></h6>
+            <div class="row">
+                <!-- Swiper -->
+                <div class="swiper-container small-slide">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="profile.html">
+                                <div class="card shadow-sm border-0" onclick="location.href='profile.html'">
+                                    <div class="card-body">
+                                        <div class="row no-gutters h-100">
+                                            <img src="img/wallet-icon.png" alt="" height="100px" style="margin-right:10px;margin-top:35px" class="small-slide-right">
+                                            <div class="col-8">
+                                                <!--<button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>-->
+                                                <a href="profile.html" class="text-mute mb-1 mt-2 h6 d-block">Wallet </a>
+                                                <p class="text-secondary small"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="flex-apply.html">
+                                <div class="card shadow-sm border-0" onclick="location.href='flex-apply.html'">
+                                    <div class="card-body">
+                                        <div class="row no-gutters h-100">
+                                            <img src="img/flex-icon.png" height="100px" style="margin-right:10px;margin-top:35px" alt="" class="small-slide-right">
+                                            <div class="col-8">
+                                                <!--<button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite</i></button>-->
+                                                <a href="flex-apply.html" class="text-dark mb-1 mt-2 h6 d-block">Flex</a>
+                                                <p class="text-secondary small"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="swiper-container small-slide">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="farmonline.html">
+                                <div class="card shadow-sm border-0" onclick="location.href='farmonline.html'">
+                                    <div class="card-body">
+                                        <div class="row no-gutters h-100">
+                                            <img src="img/farm.png" height="100px" style="margin-right:10px;margin-top:35px" alt="" class="small-slide-right">
+                                            <div class="col-8">
+                                                <!--<button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>-->
+                                                <a href="farmonline.html" class="text-dark mb-1 mt-2 h6 d-block">Farm Online</a>
+                                                <p class="text-secondary small"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="vendor.html">
+                                <div class="card shadow-sm border-0" onclick="location.href='vendor.html'">
+                                    <div class="card-body">
+                                        <div class="row no-gutters h-100">
+                                            <img src="img/vendor.png" height="100px" style="margin-right:10px;margin-top:35px" alt="" class="small-slide-right">
+                                            <div class="col-9">
+                                                <!--<button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>-->
+                                                <a href="vendor.html" class="text-dark mb-1 mt-2 h6 d-block">Producers</a>
+                                                <p class="text-secondary small"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="slideshow-container" style="margin-top: 40px;">
+
+                <div class="mySlides slide">
+                    <div class="numbertext"></div>
+                    <img src="" id="photo1" style="width:100%; height: 150px">
+                    <div class="text"></div>
+                </div>
+
+                <div class="mySlides slide">
+                    <div class="numbertext"></div>
+                    <img src="" id="photo2" style="width:100%; height: 150px">
+                    <div class="text"></div>
+                </div>
+
+                <div class="mySlides slide">
+                    <div class="numbertext"></div>
+                    <img src="" id="photo3" style="width:100%; height: 150px">
+                    <div class="text"></div>
+                </div>
+
+            </div>
+            <br>
+
+            <div style="text-align:center">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+            <!--<h6 class="subtitle">Products <a href="allmarkets.html" class="float-right small">View All</a></h6>-->
+        </div>
+        <div class="container-fluid bg-success text-white mb-3">
+            <div class="row">
+                <div class="container">
+                    <div class="row  py-4 ">
+                        <div class="col">
+                            <h1 class="text-uppercase mb-3" style="font-size: 15px">BUY FROM ANY MARKET IN NIGERIA</h1>
+                            <p class="mb-3">At exactly the same price<br><span class="text-dark"></span></p>
+                        </div>
+                        <div class="col-5 col-md-3 col-lg-2 col-xl-2">
+                            <img src="img/orange-small.png" alt="" class="mw-100 mt-3">
+                        </div>
+                        <div class="w-100"></div>
+                        <div class="col">
+                            <p>and get it delivered to your doorstep</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<div class="container-fluid bg-warning text-white my-3">
+            <div class="row">
+                <div class="container">
+                    <div class="row  py-4 ">
+                        <div class="col">
+                            <h1 style="font-size: 20px" class="text-uppercase mb-3">20% OFF Season Sale</h1>
+                            <p class="mb-3" style="font-size: 12px">Use Coupan Code<br><span class="text-dark">DFR0020</span></p>
+                        </div>
+                        <div class="col-5 col-md-3 col-lg-2 col-xl-2">
+                            <img src="img/banana.png" alt="" class="mw-100 mt-3">
+                        </div>
+                        <div class="w-100"></div>
+                        <div class="col">
+                            <p style="font-size: 13px">Get the all new fresh bananas at very low price</p>
+                        </div>-->
+    </div>
+    </div>
+    </div>
+    </div>
+
+    <div class="footer">
+        <div class="no-gutters">
+            <div class="col-auto mx-auto">
+                <div class="row no-gutters justify-content-center">
+                    <div class="col-auto">
+                        <a href="index.html" class="btn btn-link-default">
+                            <i class="material-icons">store_mall_directory</i>
+                        </a>
+                        <center>
+                            <p class="text-mute" style="font-size: 10px; margin-top: -27px;opacity:0.5;">Home</p>
+                        </center>
+                    </div>
+                    <div class="col-auto">
+                        <a href="storetype.html" class="btn btn-link-default">
+                            <i class="material-icons">toc</i>
+                        </a>
+                        <center>
+                            <p class="text-mute" style="font-size: 10px; margin-top: -27px;opacity: 0.5">Category</p>
+                        </center>
+                    </div>
+                    <div class="col-auto">
+                        <a href="cart.html" class="btn btn-default shadow centerbutton">
+                            <i class="material-icons">local_mall</i>
+                        </a>
+                        <center>
+                            <p class="text-mute" style="font-size: 10px; margin-top: -6px;opacity: 0.5">Cart</p>
+                        </center>
+                    </div>
+                    <div class="col-auto">
+                        <a href="location.html" class="btn btn-link-default">
+                            <i class="material-icons">room</i>
+                        </a>
+                        <center>
+                            <p class="text-mute" style="font-size: 10px; margin-top: -27px;opacity: 0.5">Location</p>
+                        </center>
+                    </div>
+                    <div class="col-auto">
+                        <a href="profile.html" class="btn btn-link-default">
+                            <i class="material-icons">account_circle</i>
+                        </a>
+                        <center>
+                            <p class="text-mute" style="font-size: 10px; margin-top: -27px; opacity: 0.5"> Profile</p>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- notification -->
+    <!--<div class="notification bg-white shadow border-primary">
+        <div class="row">
+            <div class="col-auto align-self-center pr-0">
+                <i class="material-icons text-primary md-36">fullscreen</i>
+            </div>
+            <div class="col">
+                <h6>Viewing in Phone?</h6>
+                <p class="mb-0 text-secondary">Double tap to enter into fullscreen mode for each page.</p>
+            </div>
+            <div class="col-auto align-self-center pl-0">
+                <button class="btn btn-link closenotification"><i class="material-icons text-secondary text-mute md-18 ">close</i></button>
+            </div>
+        </div>
+    </div>-->
+    <!-- notification ends -->
+
+
+    <!-- jquery, popper and bootstrap js -->
+    <!--script for slide sec home-->
+    <script>
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
+    </script>
+    <!--script end her--->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="vendor/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- swiper js -->
+    <script src="vendor/swiper/js/swiper.min.js"></script>
+
+    <!-- template custom js -->
+    <script src="js/main.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/profile.js"></script>
+    <script src="js/notification.js"></script>
+    <script src="cordova.js"></script>
+    <script src="js/share.js"></script>
+    <!-- page level script -->
+    <!--pull image script-->
+    <script>
+        $(window).on('load', function() {
+            //swiper slider carousel 
+            var swiper = new Swiper('.small-slide', {
+                slidesPerView: 'auto',
+                spaceBetween: 0,
+            });
+
+            var swiper = new Swiper('.news-slide', {
+                slidesPerView: 5,
+                spaceBetween: 0,
+                pagination: {
+                    el: '.swiper-pagination',
+                },
+                breakpoints: {
+                    1024: {
+                        slidesPerView: 4,
+                        spaceBetween: 0,
+                    },
+                    768: {
+                        slidesPerView: 3,
+                        spaceBetween: 0,
+                    },
+                    640: {
+                        slidesPerView: 2,
+                        spaceBetween: 0,
+                    },
+                    320: {
+                        slidesPerView: 2,
+                        spaceBetween: 0,
+                    }
+                }
+            });
+
+            /* notification view and hide */
+            setTimeout(function() {
+                $('.notification').addClass('active');
+                setTimeout(function() {
+                    $('.notification').removeClass('active');
+                }, 3500);
+            }, 500);
+            $('.closenotification').on('click', function() {
+                $(this).closest('.notification').removeClass('active')
+            });
+        });
+
+        //banners
+        $.ajax({
+            url: "https://evolve.capfields.com.ng/user_app/banner.php",
+            type: "GET",
+            headers: {
+                Accept: 'application/json'
+            },
+            success: function(res) {
+                console.log(res)
+                photo1 = res.photo1;
+                photo2 = res.photo2;
+                photo3 = res.photo3;
+                photo4 = res.photo4;
+                document.getElementById("photo1").setAttribute("src", "https://evolve.capfields.com.ng/view/banner/" + photo1);
+                document.getElementById("photo2").setAttribute("src", "https://evolve.capfields.com.ng/view/banner/" + photo2);
+                document.getElementById("photo3").setAttribute("src", "https://evolve.capfields.com.ng/view/banner/" + photo3);
+                document.getElementById("photo4").setAttribute("src", "https://evolve.capfields.com.ng/view/banner/" + photo4);
+            },
+            error: function(res) {
+                console.log(res)
+            }
+        })
+
+        $(window).on('load', function() {
+            //swiper slider carousel 
+            var swiper = new Swiper('.small-slide', {
+                slidesPerView: 'auto',
+                spaceBetween: 0,
+            });
+
+            var swiper = new Swiper('.news-slide', {
+                slidesPerView: 5,
+                spaceBetween: 0,
+                pagination: {
+                    el: '.swiper-pagination',
+                },
+                breakpoints: {
+                    1024: {
+                        slidesPerView: 4,
+                        spaceBetween: 0,
+                    },
+                    768: {
+                        slidesPerView: 3,
+                        spaceBetween: 0,
+                    },
+                    640: {
+                        slidesPerView: 2,
+                        spaceBetween: 0,
+                    },
+                    320: {
+                        slidesPerView: 2,
+                        spaceBetween: 0,
+                    }
+                }
+            });
+
+            /* notification view and hide */
+            setTimeout(function() {
+                $('.notification').addClass('active');
+                setTimeout(function() {
+                    $('.notification').removeClass('active');
+                }, 3500);
+            }, 500);
+            $('.closenotification').on('click', function() {
+                $(this).closest('.notification').removeClass('active')
+            });
+        });
+    </script>
+
+</body>
+
+
+
+</html>

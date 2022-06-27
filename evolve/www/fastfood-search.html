@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en" class="pink-theme">
+
+
+<!-- Mirrored from maxartkiller.com/website/GoMobileUX/gofruit/all-products.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 10 Nov 2019 18:18:04 GMT -->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="Maxartkiller">
+
+    <title>Market</title>
+
+    <!-- Material design icons CSS -->
+    <link rel="stylesheet" href="vendor/materializeicon/material-icons.css">
+
+    <!-- Roboto fonts CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap-4.3.1/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Swiper CSS -->
+    <link href="vendor/swiper/css/swiper.min.css" rel="stylesheet">
+
+    <!-- Chosen multiselect CSS -->
+    <link href="vendor/chosen_v1.8.7/chosen.min.css" rel="stylesheet">
+
+    <!-- nouislider CSS -->
+    <link href="vendor/nouislider/nouislider.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        .textwrap {
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 13ch;
+        }
+        
+        .storetextwrap {
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 15ch;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row no-gutters vh-100 loader-screen">
+        <div class="col align-self-center text-white text-center">
+            <img src="img/logo.png" height="50px" alt="logo">
+            <h3><span class="font-weight-light">Capfields</span>Evolve</h3>
+            <div class="laoderhorizontal">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar">
+        <div class="text-center">
+            <div class="figure-menu shadow">
+                <figure><img src="img/userpic.png" alt=""></figure>
+            </div>
+            <h5 class="mb-1" id="customerName"></h5>
+            <!--<p class="text-mute small">Abuja, Nigeria</p>-->
+        </div>
+        <br>
+        <div class="row mx-0">
+            <div class="col">
+                <div class="card mb-3 border-0 shadow-sm bg-template-light">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <p class="text-secondary small mb-0">Available Balance</p>
+                                <h6 class="text-dark my-0" id="walletBalance"></h6>
+                            </div>
+                            <div class="col-auto">
+                                <a href="fundwallet.html"><button class="btn btn-default button-rounded-36 shadow"><i class="material-icons">add</i></button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h5 class="subtitle text-uppercase"><span>Menu</span></h5>
+                <div class="list-group main-menu">
+                    <a href="index.html" class="list-group-item list-group-item-action active">Home</a>
+                    <a href="notification.html" class="list-group-item list-group-item-action">Notification <span class="badge badge-dark text-white" id="notCounter"></span></a>
+                    <a href="transfer.html" class="list-group-item list-group-item-action">Wallet Transfer</a>
+                    <a href="vendor.html" class="list-group-item list-group-item-action">Producers</a>
+                    <a href="farmonline.html" class="list-group-item list-group-item-action">Farm online</a>
+                    <a href="my-order.html" class="list-group-item list-group-item-action">My Order</a>
+                    <a href="profile.html" class="list-group-item list-group-item-action">My Profile</a>
+                    <a href="setting.html" class="list-group-item list-group-item-action">Settings</a>
+                    <a href="#" id="shareBtn" class="list-group-item list-group-item-action">Share App</a>
+                    <a href="#" onclick="logout()" class="list-group-item list-group-item-action mt-4">Logout</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="wrapper">
+        <div class="header">
+            <div class="row no-gutters">
+                <div class="col-auto">
+                    <button class="btn  btn-link text-dark menu-btn"><img src="img/menu.png" alt=""><span class="new-notification"></span></button>
+                </div>
+                <div class="col text-center"><img src="img/logo-header.png" alt="" class="header-logo"></div>
+                <div class="col-auto">
+                    <a href="profile.html" class="btn  btn-link text-dark"><i class="material-icons">account_circle</i></a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <!--<div class="row">
+                <div class="col-9">
+                    <input type="text" class="form-control form-control-lg" id="searchKey" placeholder="Search">
+                </div>
+                <div class="col-2">
+                    <button class="btn btn-default shadow" style="padding:7px;margin-left:-20px;margin-top:3px"><i class="material-icons">search</i></button>
+                </div>
+                <div class="col-1"></div>
+            </div>--><br>
+
+
+            <!--<div class="subtitle h6">
+                <div class="d-inline-block">
+                    All fresh fruits<br>
+                    <p class="small text-mute">2154 products</p>
+                </div>
+                <div class="float-right">
+                    <div class="btn-group filter-group" role="group" aria-label="Basic example">
+                        <a href="all-products.html" class="btn btn-light active"><i class="material-icons">view_module</i></a>
+                        <a href="all-products-list.html" class="btn btn-light"><i class="material-icons">view_list</i></a>
+                    </div>
+                </div>
+            </div>-->
+
+            <div class="row" id="products" class="products">
+            </div>
+            <div class="col-12 text-center loader">
+                <div class="btn btn-default btn-rounded mb-3">
+                    <div class="btn-loader">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <h6 class="d-inline-block text-left mx-2 mb-0 text-normal">Loading Products<br><small class="text-mute">Please wait for a while...</small></h6>
+                </div>
+            </div>
+            <nav>
+                <ul class="pagination justify-content-center hidden">
+                    <li class="page-item less">
+                        <a class="page-link" id="loadless" aria-label="Previous">
+                            <span aria-hidden="true">«</span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                    </li>
+                    <li class="page-item one">
+                        <a class="page-link" id="link1">1</a>
+                    </li>
+                    <li class="page-item two">
+                        <a class="page-link" id="link2">2</a>
+                    </li>
+                    <li class="page-item three">
+                        <a class="page-link" id="link3">3</a>
+                    </li>
+                    <li class="page-item four">
+                        <a class="page-link" id="link4">4</a>
+                    </li>
+                    <li class="page-item five">
+                        <a class="page-link" id="link5">5</a>
+                    </li>
+                    <li class="page-item six">
+                        <a class="page-link" id="link6">6</a>
+                    </li>
+                    <li class="page-item seven">
+                        <a class="page-link" id="link7">7</a>
+                    </li>
+                    <li class="page-item more">
+                        <a class="page-link" id="loadmore" aria-label="Next">
+                            <span aria-hidden="true">»</span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="footer">
+            <div class="no-gutters">
+                <div class="col-auto mx-auto">
+                    <div class="row no-gutters justify-content-center">
+                        <div class="col-auto">
+                            <a href="index.html" class="btn btn-link-default">
+                                <i class="material-icons">store_mall_directory</i>
+                            </a>
+                            <center>
+                                <p class="text-mute" style="font-size: 10px; margin-top: -27px;opacity:0.5;">Home</p>
+                            </center>
+                        </div>
+                        <div class="col-auto">
+                            <a href="categories.html?type=fastfood&link=fastfood.html" class="btn btn-link-default">
+                                <i class="material-icons">toc</i>
+                            </a>
+                            <center>
+                                <p class="text-mute" style="font-size: 10px; margin-top: -27px;opacity: 0.5">Category</p>
+                            </center>
+                        </div>
+                        <div class="col-auto">
+                            <a href="cart.html" class="btn btn-default shadow centerbutton">
+                                <i class="material-icons">local_mall</i>
+                            </a>
+                            <center>
+                                <p class="text-mute" style="font-size: 10px; margin-top: -6px;opacity: 0.5">Cart</p>
+                            </center>
+                        </div>
+                        <div class="col-auto">
+                            <a href="location.html" class="btn btn-link-default">
+                                <i class="material-icons">room</i>
+                            </a>
+                            <center>
+                                <p class="text-mute" style="font-size: 10px; margin-top: -27px;opacity: 0.5">Location</p>
+                            </center>
+                        </div>
+                        <div class="col-auto">
+                            <a href="selectstore.html?type=fastfood" class="btn btn-link-default">
+                                <i class="material-icons">store</i>
+                            </a>
+                            <center>
+                                <p class="text-mute" style="font-size: 10px; margin-top: -27px; opacity: 0.5"> Select Store</p>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jquery, popper and bootstrap js -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="vendor/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- swiper js -->
+    <script src="vendor/swiper/js/swiper.min.js"></script>
+
+    <!-- nouislider js -->
+    <script src="vendor/nouislider/nouislider.min.js"></script>
+
+    <!-- chosen multiselect js -->
+    <script src="vendor/chosen_v1.8.7/chosen.jquery.min.js"></script>
+
+    <!-- template custom js -->
+    <script src="js/main.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/profile.js"></script>
+    <script src="js/loc.js"></script>
+    <script src="js/notification.js"></script>
+    <script src="cordova.js"></script>
+    <script src="js/share.js"></script>
+    <!-- page level script -->
+    <script>
+        var getUrlParameter = function getUrlParameter(sParam) {
+            var sPageURL = window.location.search.substring(1),
+                sURLVariables = sPageURL.split('&'),
+                sParameterName,
+                i;
+
+            for (i = 0; i < sURLVariables.length; i++) {
+                sParameterName = sURLVariables[i].split('=');
+
+                if (sParameterName[0] === sParam) {
+                    return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+                }
+            }
+        };
+        var key = getUrlParameter('key');
+        var pageno = getUrlParameter('page');
+        if (pageno == null) {
+            pageno = 1;
+        }
+        document.getElementById("link1").setAttribute("href", "fastfood-search.html?key=" + key + "&page=1");
+        document.getElementById("link2").setAttribute("href", "fastfood-search.html?key=" + key + "&page=2");
+        document.getElementById("link3").setAttribute("href", "fastfood-search.html?key=" + key + "&page=3");
+        document.getElementById("link4").setAttribute("href", "fastfood-search.html?key=" + key + "&page=4");
+        document.getElementById("link5").setAttribute("href", "fastfood-search.html?key=" + key + "&page=5");
+        document.getElementById("link6").setAttribute("href", "fastfood-search.html?key=" + key + "&page=6");
+        document.getElementById("link7").setAttribute("href", "fastfood-search.html?key=" + key + "&page=7");
+
+        morepage = parseInt(pageno) + 1;
+        document.getElementById("loadmore").setAttribute("href", "fastfood-search.html?key=" + key + "&page=" + morepage);
+        if (pageno > 1) {
+            lesspage = parseInt(pageno) - 1;
+            document.getElementById("loadless").setAttribute("href", "fastfood-search.html?key=" + key + "&page=" + lesspage);
+        } else if (pageno == 1) {
+            document.getElementById("loadless").setAttribute("href", "#");
+        } else {
+            lesspage = 1;
+            document.getElementById("loadless").setAttribute("href", "fastfood-search.html?key=" + key + "&page=" + lesspage);
+        }
+
+
+        if (pageno == 1) {
+            $(".one").addClass("active");
+        } else if (pageno == 2) {
+            $(".two").addClass("active");
+        } else if (pageno == 3) {
+            $(".three").addClass("active");
+        } else if (pageno == 4) {
+            $(".four").addClass("active");
+        } else if (pageno == 5) {
+            $(".five").addClass("active");
+        } else if (pageno == 6) {
+            $(".six").addClass("active");
+        } else if (pageno == 7) {
+            $(".seven").addClass("active");
+        } else if (pageno > 3) {
+            $(".more").addClass("active");
+        } else {
+            $(".page-link").removeClass("active");
+        }
+        //all products
+        $.ajax({
+            url: "https://evolve.capfields.com.ng/user_app/fastfood-search.php",
+            type: "GET",
+            headers: {
+                Accept: 'application/json'
+            },
+            data: {
+                token: token,
+                email: email,
+                key: key,
+                pageno: pageno
+            },
+            success: function(res) {
+                console.log(res)
+                msg = res.message;
+                if (msg == 'success') {
+                    product = '';
+                    $.each(res.data, function(key, value) {
+                        product += '<div class="col-6 col-md-4 col-lg-3 col-xl-2">';
+                        product += '<div class="card shadow-sm border-0 mb-4">';
+                        product += '<div class="card-body">';
+                        product += '<button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>';
+                        //product += '<div class="badge badge-success float-right mt-1">10% off</div>';
+                        product += '<a href="product-details.html?type=fastfood.html&code=' + value.product_code + '"><figure class="product-image"><img src="https://evolve.capfields.com.ng/view/products/' + value.photo + '" alt="" class=""></figure></a>';
+                        product += '<a href="product-details.html?type=fastfood.html&code=' + value.product_code + '" class="text-dark mb-1 mt-2 h6 d-block textwrap">' + value.product + '</a>';
+                        product += '<p class="text-secondary small mb-2 storetextwrap">' + value.store_name + '</p>';
+                        product += '<h5 class="text-success font-weight-normal mb-0">&#8358;' + parseInt(value.price - value.discount) + '</h5>';
+                        product += '<button class="btn btn-default button-rounded-36 shadow-sm float-bottom-right" onclick="$.ajax({url: \'https://evolve.capfields.com.ng/user_app/addtocart.php\', type: \'POST\', headers: {Accept: \'application/json\'}, data: {email: email, token: token, pcode: ' + value.product_code + '}, success: function(res){status=res.status; msg=res.message; if(status==\'true\'){alert(msg)}else if(msg==\'false\'){location.href=\'location.html\'} else{alert(msg)}}, error: function(res){alert(\'Error in connection\')}})"><i class="material-icons md-18">shopping_cart</i></button>';
+                        product += ' </div>';
+                        product += ' </div>';
+                        product += ' </div>';
+                    });
+                    $("#products").append(product);
+                    $(".loader").addClass("hidden");
+                    $(".pagination").removeClass("hidden");
+                } else {
+                    alert(msg);
+                    goBack();
+                }
+            },
+            error: function(res) {
+                console.log(res)
+            }
+        });
+
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+
+</body>
+
+
+<!-- Mirrored from maxartkiller.com/website/GoMobileUX/gofruit/all-products.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 10 Nov 2019 18:18:05 GMT -->
+
+</html>

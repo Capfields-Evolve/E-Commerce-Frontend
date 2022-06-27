@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en" class="green-theme">
+
+
+<!-- Mirrored from maxartkiller.com/website/GoMobileUX/gofruit/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 10 Nov 2019 18:18:18 GMT -->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="Maxartkiller">
+
+    <title>Custom Order · Evolve</title>
+
+    <!-- Material design icons CSS -->
+    <link rel="stylesheet" href="vendor/materializeicon/material-icons.css">
+
+    <!-- Roboto fonts CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap-4.3.1/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Swiper CSS -->
+    <link href="vendor/swiper/css/swiper.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="row no-gutters vh-100 loader-screen">
+        <div class="col align-self-center text-white text-center">
+            <img src="img/logo.png" height="50px" alt="logo">
+            <h1><span class="font-weight-light">Capfields</span>Evolve</h1>
+            <div class="laoderhorizontal">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <div class="row no-gutters vh-100 proh bg-template">
+        <img src="" alt="logo" class="apple right-image align-self-center">
+        <div class="col align-self-center px-3 text-center">
+            <!--<img src="img/logo.png" alt="logo" class="logo-small">-->
+            <p></p>
+            <h2 style="font-size: 20px" class="text-white "><span class="font-weight-light">Custom</span>Order</h2>
+            <a href="index.html" class="btn btn-lg btn-default btn-rounded shadow"><span>Home</span><i class="material-icons">home</i></a>
+            <form class="form-signin shadow">
+                <div class="form-group float-label">
+                    <input type="text" id="myOrder" class="form-control" required autofocus>
+                    <label for="inputEmail" class="form-control-label">Products (Seperate with comma)</label>
+                </div>
+
+                <div class="form-group float-label">
+                    <input type="text" id="myDesc" class="form-control" required>
+                    <label for="inputPassword" class="form-control-label">Description</label>
+                </div>
+                <div class="form-group float-label">
+                    <input type="number" id="myQt" class="form-control" required>
+                    <label for="inputPassword" class="form-control-label">Quantity</label>
+                </div>
+                <div class="form-group float-label">
+                    <input type="text" id="mySize" class="form-control" required>
+                    <label for="inputPassword" class="form-control-label">Size(Optional)</label>
+                </div>
+                <div class="form-group float-label">
+                    <input type="text" id="myLoc" class="form-control" required>
+                    <label for="inputPassword" class="form-control-label">Preferred market or city</label>
+                </div>
+                <div class="form-group float-label">
+                    <input type="text" id="myContact" class="form-control" required>
+                    <label for="inputPassword" class="form-control-label">Contact(email or mobile)</label>
+                </div>
+                <div class="form-group float-label">
+                    <input type="text" id="myAdd" class="form-control" required>
+                    <label for="inputPassword" class="form-control-label">Delivery Address</label>
+                </div>
+                <div>
+                    <center>
+                        <label style="font-size: 13px" for="birthdaytime">Select date</label>
+                        <input type="date" id="myDate" class="form-control">
+                        <!--<input type="submit">-->
+                    </center>
+                </div>
+                <!--<div class="form-group float-label">
+                    <input type="Number" id="inputPassword" class="form-control" required>
+                    <label for="inputPassword" class="form-control-label">Phone Number</label>
+                </div>-->
+                <!--<label for="myfile" style="color: grey; opacity: 0.6">Upload receipt</label>
+                    <input style="color: green; border-color: green; font-size: 12px; border-radius: 45px" class="btn btn-lg btn-default btn-rounded shadow" type="file" id="myfile" name="myfile" multiple><br><br>
+                </form>-->
+                <button class="btn btn-lg btn-default btn-rounded shadow" id="customOrder" style="margin-top:5px;"><span>Next</span><i class="material-icons">arrow_forward</i></button>
+
+
+                <div class="form-group my-4 text-left">
+                    <center>
+                        <p><a href="custom-order.html">Complete previous order</a></p>
+                    </center>
+                </div>
+
+                <!-- <div class="row">
+                    <div class="col-auto">
+                        <a href="index.html" class="btn btn-lg btn-default btn-rounded shadow"><span>Submit</span><i class="material-icons">arrow_forward</i></a>
+                        <br>
+                        <br>
+                    </div>
+
+                    <div class="col align-self-center text-right pl-0">
+                        <a href="forgot-password.html">Forgot Password?</a>
+                    </div>-->
+        </div>
+        <!--</form>
+            <p class="text-center text-white">
+                Don't have account yet?<br>
+                <a href="signup.html">Sign Up</a> here.
+            </p>-->
+    </div>
+    </div>
+
+    <!-- jquery, popper and bootstrap js -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="vendor/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- swiper js -->
+    <script src="vendor/swiper/js/swiper.min.js"></script>
+
+    <!-- template custom js -->
+    <script src="js/main.js"></script>
+    <script src="login.js"></script>
+    <script src="js/profile.js"></script>
+    <script>
+        $("#customOrder").click(function(e) {
+            e.preventDefault();
+            order = $("#myOrder").val();
+            desc = $("#myDesc").val();
+            qt = $("#myQt").val();
+            size = $("#mySize").val();
+            loc = $("#myLoc").val();
+            contact = $("#myContact").val();
+            date = $("#myDate").val();
+            add = $("#myAdd").val();
+            if (order == "") {
+                alert('Enter products');
+            } else if (desc == "") {
+                alert('Enter description');
+            } else if (qt == "") {
+                alert('Enter quantity');
+            } else if (loc == "") {
+                alert('Enter market location');
+            } else if (contact == "") {
+                alert('Enter contact details');
+            } else if (add == "") {
+                alert('Enter delivery address');
+            } else if (date == "") {
+                alert('Select date');
+            } else {
+                $.ajax({
+                    url: "https://evolve.capfields.com.ng/user_app/custom-order.php",
+                    type: "POST",
+                    headers: {
+                        Accept: 'application/json'
+                    },
+                    data: {
+                        email: email,
+                        token: token,
+                        order: order,
+                        desc: desc,
+                        qt: qt,
+                        size: size,
+                        loc: loc,
+                        contact: contact,
+                        date: date,
+                        address: add
+                    },
+                    success: function(res) {
+                        console.log(res)
+                        msg = res.message;
+                        if (msg == 'success') {
+                            alert('Order submitted successfully, we will contact you within 24-48 hours with your order ID and market price of product(s) ordered to complete and proceed');
+                            location.href = 'custom-order.html';
+                        } else {
+                            alert(msg)
+                        }
+                    },
+                    error: function(res) {
+                        console.log(res)
+                        alert('Error in connection');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

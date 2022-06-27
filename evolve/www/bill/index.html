@@ -1,0 +1,838 @@
+<!doctype html>
+<html lang="en" class="blue-theme">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="Evolve Bill Payment App">
+
+    <title>Home · Evolve Bill Payment</title>
+
+    <!-- Material design icons CSS -->
+    <link rel="stylesheet" href="vendor/materializeicon/material-icons.css">
+
+    <!-- Roboto fonts CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap-4.4.1/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Swiper CSS -->
+    <link href="vendor/swiper/css/swiper.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        .rest {
+            display: none;
+        }
+        
+        .dstv {
+            margin-top: 20px;
+            display: none;
+        }
+        
+        .gotv {
+            margin-top: 20px;
+            display: none;
+        }
+        
+        .mtn {
+            display: none;
+            margin-top: 20px;
+        }
+        
+        .glo {
+            display: none;
+            margin-top: 20px;
+        }
+        
+        .airtel {
+            display: none;
+            margin-top: 20px;
+        }
+        
+        .mobile {
+            display: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row no-gutters vh-100 loader-screen">
+        <div class="col align-self-center text-white text-center">
+            <!--<img src="img/logo.png" alt="logo">-->
+            <h3 class="mt-3"><span class="font-weight-light ">Capfields</span>Pay</h3>
+            <p class="text-mute text-uppercase small">Pay bills with ease</p>
+            <div class="laoderhorizontal">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar">
+        <div class="mt-4 mb-3">
+            <div class="row">
+                <div class="col-auto">
+                    <figure class="avatar avatar-60 border-0"><img src="img/user1.png" alt=""></figure>
+                </div>
+                <div class="col pl-0 align-self-center">
+                    <h5 class="mb-1" id="cname" style="text-transform: capitalize;"></h5>
+                    <p class="text-mute small" id="useremail"></p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="list-group main-menu">
+                    <a href="../index.html" class="list-group-item list-group-item-action active"><i class="material-icons icons-raised">home</i>Home</a>
+                    <!--<a href="notification.html" class="list-group-item list-group-item-action"><i class="material-icons icons-raised">notifications</i>Notification <span class="badge badge-dark text-white">2</span></a>
+                    <a href="alltransactions.html" class="list-group-item list-group-item-action"><i class="material-icons icons-raised">find_in_page</i>History</a>
+                    <a href="controls.html" class="list-group-item list-group-item-action"><i class="material-icons icons-raised">view_quilt<span class="new-notification"></span></i>Pages Controls</a>
+                    <a href="setting.html" class="list-group-item list-group-item-action"><i class="material-icons icons-raised">important_devices</i>Settings</a>
+                    <a href="javascript:void(0)" class="list-group-item list-group-item-action" data-toggle="modal" data-target="#colorscheme"><i class="material-icons icons-raised">color_lens</i>Color scheme</a>-->
+                    <a href="#" onclick="logout()" class="list-group-item list-group-item-action"><i class="material-icons icons-raised bg-danger">power_settings_new</i>Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="javascript:void(0)" class="closesidemenu"><i class="material-icons icons-raised bg-dark ">close</i></a>
+    <div class="wrapper homepage">
+        <!-- header -->
+        <div class="header">
+            <div class="row no-gutters">
+                <div class="col-auto">
+                    <button class="btn  btn-link text-dark menu-btn"><i class="material-icons">menu</i><span class="new-notification"></span></button>
+                </div>
+                <!--<div class="col text-center"><img src="img/logo-header.png" alt="" class="header-logo"></div>-->
+
+            </div>
+        </div>
+        <!-- header ends -->
+
+        <div class="container">
+            <div class="card bg-template shadow mt-4 h-190">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-auto">
+                            <figure class="avatar avatar-60"><img src="img/user1.png" alt=""></figure>
+                        </div>
+                        <div class="col pl-0 align-self-center">
+                            <h5 class="mb-1" id="myname"></h5>
+                            <p class="text-mute small" id="myemail"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container top-100">
+            <div class="card mb-4 shadow">
+                <div class="card-body border-bottom">
+                    <div class="row">
+                        <div class="col">
+                            <h3 class="mb-0" style="font-weight: bold;font-size:20px;" id="walletbal"></h3>
+                            <p class="text-mute" style="font-size:13px;">Available Balance</p>
+                        </div>
+                        <div class="col-auto">
+                            <a href="../fundwallet.html"><button class="btn btn-default shadow-sm" style="font-weight: bold;border-radius:25px;">Fund</button></a>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="card-footer bg-none">
+                    <div class="row">
+                        <div class="col">
+                            <p>71.00 <i class="material-icons text-danger vm small">arrow_downward</i><br><small class="text-mute">INR</small></p>
+                        </div>
+                        <div class="col text-center">
+                            <p>1.00 <i class="material-icons text-success vm small">arrow_upward</i><br><small class="text-mute">USD</small></p>
+                        </div>
+                        <div class="col text-right">
+                            <p><i class="material-icons text-success vm small mr-1">arrow_upward</i>0.78<br><small class="text-mute">GBP</small></p>
+                        </div>
+                    </div>
+                </div>-->
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="swiper-container icon-slide mb-4">
+                    <div class="swiper-wrapper">
+                        <a href="#" class="swiper-slide text-center" data-toggle="modal" data-target="#paymodal">
+                            <div class="avatar avatar-60 no-shadow border-0">
+                                <div class="overlay bg-template"></div>
+                                <i class="material-icons text-template">phone</i>
+                            </div>
+                            <p class="small mt-2">Airtime</p>
+                        </a>
+                        <a href="#" class="swiper-slide text-center" data-toggle="modal" data-target="#sendmoney">
+                            <div class="avatar avatar-60 no-shadow border-0">
+                                <div class="overlay bg-template"></div>
+                                <i class="material-icons text-template">send</i>
+                            </div>
+                            <p class="small mt-2">Send Money</p>
+                        </a>
+                        <a href="#" class="swiper-slide text-center" data-toggle="modal" data-target="#bookmodal">
+                            <div class="avatar avatar-60 no-shadow border-0">
+                                <div class="overlay bg-template"></div>
+                                <i class="material-icons text-template">tv</i>
+                            </div>
+                            <p class="small mt-2">Cable TV</p>
+                        </a>
+                        <a href="#" class="swiper-slide text-center" data-toggle="modal" data-target="#datamodal">
+                            <div class="avatar avatar-60 no-shadow border-0">
+                                <div class="overlay bg-template"></div>
+                                <i class="material-icons text-template">wifi</i>
+                            </div>
+                            <p class="small mt-2">Data Bundle</p>
+                        </a>
+                        <!--<a href="#" class="swiper-slide text-center">
+                            <div class="avatar avatar-60 no-shadow border-0">
+                                <div class="overlay bg-template"></div>
+                                <i class="material-icons text-template">camera</i>
+                            </div>
+                            <p class="small mt-2">Scan</p>
+                        </a>-->
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+
+
+
+            <!--<div class="row">
+                <div class="container px-0">
+                    <div class="swiper-container offer-slide">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="card shadow border-0 bg-template">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-auto pr-0">
+                                                <img src="img/graphics-carousel-scheme1.png" alt="" class="mw-100">
+                                            </div>
+                                            <div class="col align-self-center">
+                                                <h5 class="mb-2 font-weight-normal">Gold loan scheme</h5>
+                                                <p class="text-mute">Get all money at market rate of gold</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="card shadow border-0 bg-template">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col pr-0 align-self-center">
+                                                <h5 class="mb-2 font-weight-normal">Gold loan scheme</h5>
+                                                <p class="text-mute">Get all money at market rate of gold</p>
+                                            </div>
+                                            <div class="col-auto">
+                                                <img src="img/graphics-carousel-scheme1.png" alt="" class="mw-100">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+        </div>
+        <!--<div class="container">
+            <h6 class="subtitle">Upcoming Payments <a href="allpayment.html" class="float-right small">View All</a></h6>
+            <div class="card shadow border-0 mb-3">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <h5 class="font-weight-normal mb-1">$ 1548.00 </h5>
+                            <p class="text-mute small text-secondary mb-2">20d to pay electricity bill</p>
+                            <div class="progress h-4">
+                                <div class="progress-bar bg-success" role="progressbar" style="width:35%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="col-auto pl-0">
+                            <button class="avatar avatar-50 no-shadow border-0 bg-template">
+                                <i class="material-icons">local_atm</i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card shadow border-0 mb-3">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <h5 class="font-weight-normal mb-1">$ 106.00 <span class="badge badge-danger small vm text-white">Prior</span></h5>
+                            <p class="text-mute small text-secondary mb-2">33 days to pay gas bill</p>
+                            <div class="progress h-4">
+                                <div class="progress-bar bg-danger" role="progressbar" style="width: 65%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="col-auto pl-0">
+                            <button class="avatar avatar-50 no-shadow border-0 bg-template">
+                                <i class="material-icons">local_atm</i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+        <!--<div class="container">
+            <h6 class="subtitle">Recent Messages</h6>
+            <div class="card shadow border-0 mb-3">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <div class="col-auto pr-0">
+                            <div class="avatar avatar-60 no-shadow border-0">
+                                <img src="img/user1.png" alt="">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <h6 class="font-weight-normal mb-1">Mrs. Magon Johnson </h6>
+                            <p class="text-mute small text-secondary">"Thank you for your purchase with our shop and making online payment."</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer border-top bg-none">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Quick reply" aria-describedby="button-addon4">
+                        <div class="input-group-append">
+                            <button class="btn btn-default btn-rounded-36 shadow-sm" type="button" id="button-addon4"><i class="material-icons md-18">send</i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card shadow border-0 mb-3">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <div class="col-auto pr-0">
+                            <div class="avatar avatar-60 no-shadow border-0">
+                                <img src="img/user2.png" alt="">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <h6 class="font-weight-normal mb-1">Ms. Shivani Dilux</h6>
+                            <p class="text-mute small text-secondary">"Thank you for your purchase with our shop and making online payment."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+        <!--<div class="container">
+            <h6 class="subtitle">Loan Status </h6>
+            <div class="card shadow border-0 mb-3">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <div class="col-auto pr-0">
+                            <div class="avatar avatar-50 no-shadow border-0">
+                                <div class="overlay bg-template"></div>
+                                <i class="material-icons vm text-template">local_atm</i>
+                            </div>
+                        </div>
+                        <div class="col-auto align-self-center">
+                            <h6 class="font-weight-normal mb-1">EMI</h6>
+                            <p class="text-mute small text-secondary">Home Loan</p>
+                        </div>
+                        <div class="col-auto align-self-center border-left">
+                            <h6 class="font-weight-normal mb-1">$ 1548.00</h6>
+                            <p class="text-mute small text-secondary">Due: 15-12-2019</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card shadow border-0 mb-3">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <div class="col-auto pr-0">
+                            <div class="avatar avatar-50 no-shadow border-0">
+                                <div class="overlay bg-template"></div>
+                                <i class="material-icons vm text-template">local_atm</i>
+                            </div>
+                        </div>
+                        <div class="col-auto align-self-center">
+                            <h6 class="font-weight-normal mb-1">EMI</h6>
+                            <p class="text-mute small text-secondary">Car Loan</p>
+                        </div>
+                        <div class="col-auto align-self-center border-left">
+                            <h6 class="font-weight-normal mb-1">$ 658.00</h6>
+                            <p class="text-mute small text-secondary">Due: 18-12-2019</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+        <!--<div class="container">
+            <h6 class="subtitle">News Updates</h6>
+            <div class="row">
+                <div class="swiper-container news-slide">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="card shadow-sm border-0 bg-dark text-white">
+                                <figure class="background">
+                                    <img src="img/product2.jpg" alt="">
+                                </figure>
+                                <div class="card-body">
+                                    <a href="#" class="btn btn-default btn-rounded-36 shadow-sm float-bottom-right"><i class="material-icons md-18">arrow_forward</i></a>
+                                    <h5 class="small">Multipurpose Juice allows you to grow faster</h5>
+                                    <p class="text-mute small">By Anand Mangal</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card shadow-sm border-0 bg-dark text-white">
+                                <figure class="background">
+                                    <img src="img/product3.jpg" alt="">
+                                </figure>
+                                <div class="card-body">
+                                    <a href="#" class="btn btn-default btn-rounded-36 shadow-sm float-bottom-right"><i class="material-icons md-18">arrow_forward</i></a>
+                                    <h5 class="small">Multipurpose Juice allows you to grow faster</h5>
+                                    <p class="text-mute small">By Anand Mangal</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card shadow-sm border-0 bg-dark text-white">
+                                <figure class="background">
+                                    <img src="img/product2.jpg" alt="">
+                                </figure>
+                                <div class="card-body">
+                                    <a href="#" class="btn btn-default btn-rounded-36 shadow-sm float-bottom-right"><i class="material-icons md-18">arrow_forward</i></a>
+                                    <h5 class="small">Multipurpose Juice allows you to grow faster</h5>
+                                    <p class="text-mute small">By Anand Mangal</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card shadow-sm border-0 bg-dark text-white">
+                                <figure class="background">
+                                    <img src="img/product3.jpg" alt="">
+                                </figure>
+                                <div class="card-body">
+                                    <a href="#" class="btn btn-default btn-rounded-36 shadow-sm float-bottom-right"><i class="material-icons md-18">arrow_forward</i></a>
+                                    <h5 class="small">Multipurpose Juice allows you to grow faster</h5>
+                                    <p class="text-mute small">By Anand Mangal</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card shadow-sm border-0 bg-dark text-white">
+                                <figure class="background">
+                                    <img src="img/product2.jpg" alt="">
+                                </figure>
+                                <div class="card-body">
+                                    <a href="#" class="btn btn-default btn-rounded-36 shadow-sm float-bottom-right"><i class="material-icons md-18">arrow_forward</i></a>
+                                    <h5 class="small">Multipurpose Juice allows you to grow faster</h5>
+                                    <p class="text-mute small">By Anand Mangal</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card shadow-sm border-0 bg-dark text-white">
+                                <figure class="background">
+                                    <img src="img/product3.jpg" alt="">
+                                </figure>
+                                <div class="card-body">
+                                    <a href="#" class="btn btn-default btn-rounded-36 shadow-sm float-bottom-right"><i class="material-icons md-18">arrow_forward</i></a>
+                                    <h5 class="small">Multipurpose Juice allows you to grow faster</h5>
+                                    <p class="text-mute small">By Anand Mangal</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    </div>
+    </div>-->
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <h5 class="subtitle mb-1"></h5>
+                    <p class="text-secondary">Transaction history</p>
+                </div>
+            </div>
+            <div class="row text-center mt-4">
+                <div class="col-6 col-md-3">
+                    <div class="card shadow border-0 mb-3">
+                        <div class="card-body">
+                            <div class="avatar avatar-60 no-shadow border-0">
+                                <div class="overlay bg-template"></div>
+                                <i class="material-icons vm md-36 text-template">phone</i>
+                            </div>
+                            <h3 class="mt-3 mb-0 font-weight-normal" id="airtimeTotal">0</h3>
+                            <p class="text-secondary text-mute small">Airtime Recharge</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="card shadow border-0 mb-3">
+                        <div class="card-body">
+                            <div class="avatar avatar-60 no-shadow border-0">
+                                <div class="overlay bg-template"></div>
+                                <i class="material-icons vm md-36 text-template">send</i>
+                            </div>
+                            <h3 class="mt-3 mb-0 font-weight-normal" id="transferTotal">0</h3>
+                            <p class="text-secondary text-mute small">Money Transfer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="card shadow border-0 mb-3">
+                        <div class="card-body">
+                            <div class="avatar avatar-60 no-shadow border-0">
+                                <div class="overlay bg-template"></div>
+                                <i class="material-icons vm md-36 text-template">tv</i>
+                            </div>
+                            <h3 class="mt-3 mb-0 font-weight-normal" id="cableTotal">0</h3>
+                            <p class="text-secondary text-mute small">Cable TV Subscription</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="card shadow border-0 mb-3">
+                        <div class="card-body">
+                            <div class="avatar avatar-60 no-shadow border-0">
+                                <div class="overlay bg-template"></div>
+                                <i class="material-icons vm md-36 text-template">wifi</i>
+                            </div>
+                            <h3 class="mt-3 mb-0 font-weight-normal" id="dataTotal">0</h3>
+                            <p class="text-secondary text-mute small">Data Bundle Purchase</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- footer-->
+        <div class="footer">
+            <div class="no-gutters">
+                <div class="col-auto mx-auto">
+                    <div class="row no-gutters justify-content-center">
+                        <div class="col-auto">
+                            <a href="../index.html" class="btn btn-link-default active">
+                                <i class="material-icons">home</i>
+                            </a>
+                        </div>
+                        <!--<div class="col-auto">
+                            <a href="statistics.html" class="btn btn-link-default">
+                                <i class="material-icons">insert_chart_outline</i>
+                            </a>
+                        </div>
+                        <div class="col-auto">
+                            <a href="wallet.html" class="btn btn-link-default">
+                                <i class="material-icons">account_balance_wallet</i>
+                            </a>
+                        </div>
+                        <div class="col-auto">
+                            <a href="transactions.html" class="btn btn-link-default">
+                                <i class="material-icons">widgets</i>
+                            </a>
+                        </div>
+                        <div class="col-auto">
+                            <a href="profile.html" class="btn btn-link-default">
+                                <i class="material-icons">account_circle</i>
+                            </a>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- footer ends-->
+
+    </div>
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="addmoney" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center pt-0">
+                    <img src="img/infomarmation-graphics2.png" alt="logo" class="logo-small">
+                    <div class="form-group mt-4">
+                        <input type="text" class="form-control form-control-lg text-center" placeholder="Enter amount" required="" autofocus="">
+                    </div>
+                    <p class="text-mute">You will be redirected to payment gatway to procceed further. Enter amount in USD.</p>
+                </div>
+                <div class="modal-footer border-0">
+                    <button type="button" class="btn btn-default btn-lg btn-rounded shadow btn-block" class="close" data-dismiss="modal">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="sendmoney" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5>Send Money</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body pt-0">
+
+                    <div class="form-group mt-4">
+                        <input type="number" class="form-control" id="acctno" placeholder="Account Number">
+                    </div>
+                    <div class="form-group mt-4">
+                        <select class="form-control text-center" id="banks" onchange="verifyAccount()">
+                            <option value="">Select bank</option>
+                        </select>
+                    </div>
+                    <input type="hidden" id="accname">
+                    <p id="acctname" style="font-size:20px;font-weight:bold;color:green;text-align:center;"></p>
+                    <div class="rest">
+                        <div class="form-group mt-4">
+                            <input type="number" class="form-control" id="sendamount" placeholder="Amount">
+                        </div>
+                        <div class="form-group mt-4">
+                            <input type="text" class="form-control" id="narration" placeholder="Narration">
+                        </div>
+                        <button class="btn btn-default btn-lg btn-rounded shadow btn-block" id="sendMoney" onclick="sendMoney()" style="font-weight: bold;">Send Money</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="paymodal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5>Buy Airtime</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body pt-0">
+                    <!--<div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="formyself" name="customRadioInline1" class="custom-control-input">
+                        <label class="custom-control-label" for="customRadioInline1">For Myself</label>
+                        <input type="hidden" id="myphone">
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input" checked>
+                        <label class="custom-control-label" for="customRadioInline2">Other Person</label>
+                    </div>-->
+
+                    <div class="form-group mt-4">
+                        <input type="number" id="airtimephone" class="form-control" placeholder="Phone Number">
+                    </div>
+                    <div class="form-group mt-4">
+                        <input type="number" id="airtimeamount" class="form-control" placeholder="Amount">
+                    </div>
+                </div>
+                <div class="modal-footer border-0">
+                    <button class="btn btn-default btn-lg btn-rounded shadow btn-block" id="buyAirtime" onclick="buyAirtime()">Buy Airtime</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="bookmodal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5>Cable TV Subscription</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body pt-0">
+                    <div class="row justify-content-center">
+                        <div class="col-6">
+                            <div class="card shadow">
+                                <div class="card-body" onclick="dsTv()">
+                                    <center>
+                                        <h4 style="font-weight: bold;color: blue;">DSTV</h4>
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="card shadow">
+                                <div class="card-body" onclick="goTv()">
+                                    <center>
+                                        <h4 style="font-weight: bold;color: blue;">GOTV</h4>
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dstv">
+                        <center>
+                            <p style="color:green;font-weight:bold;">DSTV Subscription</p>
+                        </center>
+                        <div class="form-group mt-4">
+                            <input type="number" class="form-control" id="dstvcard" placeholder="Smart Card Number">
+                        </div>
+                        <div class="form-group mt-4">
+                            <select type="text" id="dstvpackage" class="form-control">
+                                <option>Select Package</option>
+                            </select>
+                        </div>
+                        <button type="button" class="btn btn-default shadow btn-lg btn-rounded shadow btn-block" id="subDstv" onclick="subDstv()">Subscribe</button>
+
+                    </div>
+                    <div class="gotv">
+                        <center>
+                            <p style="color:green;font-weight:bold;">GOTV Subscription</p>
+                        </center>
+                        <div class="form-group mt-4">
+                            <input type="number" class="form-control" id="gotvcard" placeholder="Smart Card Number">
+                        </div>
+                        <div class="form-group mt-4">
+                            <select type="text" id="gotvpackage" class="form-control">
+                                <option>Select Package</option>
+                            </select>
+                        </div>
+                        <button type="button" class="btn btn-default shadow btn-lg btn-rounded shadow btn-block" onclick="subGotv()" id="subGotv">Subscribe</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="datamodal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5>Data Subscription</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body pt-0">
+                    <div class="row justify-content-center">
+                        <div class="col-6">
+                            <div class="card shadow" style="background:yellow;">
+                                <div class="card-body" onclick="mtn()">
+                                    <center>
+                                        <h6 style="font-weight: bold;color: black;">MTN</h6>
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="card shadow" style="background:greenyellow;">
+                                <div class="card-body" onclick="glo()">
+                                    <center>
+                                        <h6 style="font-weight: bold;color: black;">GLO</h6>
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center" style="margin-top: 10px;">
+                        <div class="col-6">
+                            <div class="card shadow" style="background:linear-gradient(97deg, red 20%, darkred 60%);">
+                                <div class="card-body" onclick="airtel()">
+                                    <center>
+                                        <h6 style="font-weight: bold;color: white;">AIRTEL</h6>
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="card shadow" style="background:linear-gradient(97deg, green 20%, darkgreen 60%);">
+                                <div class="card-body" onclick="mobile()">
+                                    <center>
+                                        <h6 style="font-weight: bold;color: white;">9MOBILE</h6>
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mtn">
+                        <center>
+                            <p style="color:green;font-weight:bold;">MTN</p>
+                        </center>
+                        <div class="form-group mt-4">
+                            <input type="number" class="form-control" id="mtnno" placeholder="Phone number">
+                        </div>
+                        <div class="form-group mt-4">
+                            <select type="text" id="mtnDataPlan" class="form-control">
+                                <option>Select Plan</option>
+                            </select>
+                        </div>
+                        <button type="button" class="btn btn-default shadow btn-lg btn-rounded shadow btn-block" id="subMtn" onclick="subMtn()">Buy Data</button>
+
+                    </div>
+                    <div class="glo">
+                        <center>
+                            <p style="color:green;font-weight:bold;">GLO</p>
+                        </center>
+                        <div class="form-group mt-4">
+                            <input type="number" class="form-control" id="glono" placeholder="Phone number">
+                        </div>
+                        <div class="form-group mt-4">
+                            <select type="text" id="gloDataPlan" class="form-control">
+                                <option>Select Plan</option>
+                            </select>
+                        </div>
+                        <button type="button" class="btn btn-default shadow btn-lg btn-rounded shadow btn-block" onclick="subGlo()" id="subGlo">Buy Data</button>
+
+                    </div>
+                    <div class="airtel">
+                        <center>
+                            <p style="color:red;font-weight:bold;">AIRTEL</p>
+                        </center>
+                        <div class="form-group mt-4">
+                            <input type="number" class="form-control" id="airtelno" placeholder="Phone number">
+                        </div>
+                        <div class="form-group mt-4">
+                            <select type="text" id="airtelDataPlan" class="form-control">
+                                <option>Select Plan</option>
+                            </select>
+                        </div>
+                        <button type="button" class="btn btn-default shadow btn-lg btn-rounded shadow btn-block" onclick="subAirtel()" id="subAirtel">Buy Data</button>
+                    </div>
+                    <div class="mobile">
+                        <center>
+                            <p style="color:green;font-weight:bold;">9MOBILE</p>
+                        </center>
+                        <div class="form-group mt-4">
+                            <input type="number" class="form-control" id="mobileno" placeholder="Phone number">
+                        </div>
+                        <div class="form-group mt-4">
+                            <select type="text" id="mobileDataPlan" class="form-control">
+                                <option>Select Plan</option>
+                            </select>
+                        </div>
+                        <button type="button" class="btn btn-default shadow btn-lg btn-rounded shadow btn-block" onclick="subMobile()" id="subMobile">Buy Data</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="vendor/bootstrap-4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/71ba3dee2b.js" crossorigin="anonymous"></script>
+    <!-- swiper js -->
+    <script src="vendor/swiper/js/swiper.min.js"></script>
+
+    <!-- cookie js -->
+    <script src="vendor/cookie/jquery.cookie.js"></script>
+
+    <script src="js/main.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="en" class="pink-theme">
+
+
+<!-- Mirrored from maxartkiller.com/website/GoMobileUX/gofruit/checkout.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 10 Nov 2019 18:18:22 GMT -->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="Maxartkiller">
+
+    <title>Fund Walllet · Evolve</title>
+
+    <!-- Material design icons CSS -->
+    <link rel="stylesheet" href="vendor/materializeicon/material-icons.css">
+
+    <!-- Roboto fonts CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap-4.3.1/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Swiper CSS -->
+    <link href="vendor/swiper/css/swiper.min.css" rel="stylesheet">
+
+    <!-- Chosen multiselect CSS -->
+    <link href="vendor/chosen_v1.8.7/chosen.min.css" rel="stylesheet">
+
+    <!-- nouislider CSS -->
+    <link href="vendor/nouislider/nouislider.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        .form-control:focus {
+            outline: none;
+        }
+        
+        .transfer {
+            text-align: center;
+            background-color: whitesmoke;
+            color: black;
+            font-weight: 500;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row no-gutters vh-100 loader-screen">
+        <div class="col align-self-center text-white text-center">
+            <img src="img/logo.png" height="50px" alt="logo">
+            <h3><span class="font-weight-light">Capfields</span>Evolve</h3>
+            <div class="laoderhorizontal">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar">
+        <div class="text-center">
+            <div class="figure-menu shadow">
+                <figure><img src="img/userpic.png" alt=""></figure>
+            </div>
+            <h5 class="mb-1" id="customerName"></h5>
+            <!--<p class="text-mute small">Abuja, Nigeria</p>-->
+        </div>
+        <br>
+        <div class="row mx-0">
+            <div class="col">
+                <div class="card mb-3 border-0 shadow-sm bg-template-light">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <p class="text-secondary small mb-0">Available Balance</p>
+                                <h6 class="text-dark my-0" id="walletBalance"></h6>
+                            </div>
+                            <div class="col-auto">
+                                <a href="fundwallet.html"><button class="btn btn-default button-rounded-36 shadow"><i class="material-icons">add</i></button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h5 class="subtitle text-uppercase"><span>Menu</span></h5>
+                <div class="list-group main-menu">
+                    <a href="index.html" class="list-group-item list-group-item-action active">Home</a>
+                    <a href="notification.html" class="list-group-item list-group-item-action">Notification <span class="badge badge-dark text-white" id="notCounter"></span></a>
+                    <a href="transfer.html" class="list-group-item list-group-item-action">Wallet Transfer</a>
+                    <a href="vendor.html" class="list-group-item list-group-item-action">Producers</a>
+                    <a href="farmonline.html" class="list-group-item list-group-item-action">Farm online</a>
+                    <a href="my-order.html" class="list-group-item list-group-item-action">My Order</a>
+                    <a href="profile.html" class="list-group-item list-group-item-action">My Profile</a>
+                    <a href="setting.html" class="list-group-item list-group-item-action">Settings</a>
+                    <a href="#" id="shareBtn" class="list-group-item list-group-item-action">Share App</a>
+                    <a href="#" onclick="logout()" class="list-group-item list-group-item-action mt-4">Logout</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="wrapper">
+        <div class="header">
+            <div class="row no-gutters">
+                <div class="col-auto">
+                    <button class="btn  btn-link text-dark menu-btn"><img src="img/menu.png" alt=""><span class="new-notification"></span></button>
+                </div>
+                <div class="col text-center"><img src="img/logo-header.png" alt="" class="header-logo"></div>
+                <div class="col-auto">
+                    <a href="profile.html" class="btn  btn-link text-dark"><i class="material-icons">account_circle</i></a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <br>
+            <br>
+            <center>
+                <h2></h2>
+            </center>
+
+            <h3 class="subtitle" style="font-size:25px;" align="center">Fund Wallet</h3>
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="nobank">
+                        <div class="form-group">
+                            <center><label for="textinput"><strong>Amount</strong></label></center>
+                            <input type="number" class="form-control" id="amount" placeholder="50000">
+                        </div>
+                        <a href="#" class="btn btn-lg btn-default text-white btn-block btn-rounded shadow" onclick="checkAmt()"><span>Fund</span><i class="material-icons">arrow_forward</i></a>
+                    </div>
+                    <br>
+                    <div class="transfer hidden">
+                        <p style="color:blue">Make transfer to the account details below</p>
+                        <table class="table table-bordered">
+                            <tr>
+                                <td>Account Number</td>
+                                <td>1019049321</td>
+                            </tr>
+                            <tr>
+                                <td>Account Name</td>
+                                <td>Capfields Nig Ltd</td>
+                            </tr>
+                            <tr>
+                                <td>Bank Name</td>
+                                <td>UBA</td>
+                            </tr>
+                        </table>
+                        <form action="" id="uploadimage" method="post" enctype="multipart/form-data">
+                            <input type="number" name="amount" class="form-control" style="margin-bottom:5px" placeholder="Enter amount" required>
+                            <input type="hidden" name="email" id="email">
+                            <input type="hidden" name="token" id="token">
+                            <label for="">Upload Payment Receipt</label>
+                            <input type="file" class="form-control" name="pic" required>
+                            <button type="submit" id="uploadBtn" class="btn btn-default btn-block btn-rounded shadow" style="margin-top:5px">Submit</button>
+                        </form>
+                    </div>
+                    <div class="cardpayment hidden">
+                        <div class="row">
+                            <div class="col-12">
+                                <button class="btn btn-success btn-block btn-rounded shadow-sm" onclick="makePayment()">Pay with Flutterwave</button>
+                            </div>
+                        </div><br>
+                        <div class="row">
+                            <div class="col-12">
+                                <button class="btn btn-primary btn-block btn-rounded shadow-sm" onclick="showStack()">Pay with Paystack</button>
+                            </div>
+                        </div><br>
+                        <div class="row">
+                            <div class="col-12">
+                                <button class="btn btn-default btn-rounded btn-block shadow-sm" onclick="bankTransfer()">Pay with Bank Transfer</button>
+                            </div>
+                        </div>
+                        <div class="paystack hidden">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="">Card Number</label>
+                                        <input type="number" class="form-control" id="cardno">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-3">
+                                    <div class="form-group">
+                                        <label for="">MM</label>
+                                        <input type="number" class="form-control" id="expmnt">
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="form-group">
+                                        <label for="YY">YY</label>
+                                        <input type="number" class="form-control" id="expyear">
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="">CVV</label>
+                                        <input type="number" class="form-control" id="cvv">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="">Card Holder Name</label>
+                                        <input type="text" class="form-control" id="cardname">
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn btn-success btn-block shadow" id="payWallet">PAY</button>
+                            <p id="resp"></p>
+                        </div>
+                    </div>
+                    <center><img src="img/shopper.png" height="200"></center>
+                    <br>
+                </div>
+                <div class="footer">
+                    <div class="no-gutters">
+                        <div class="col-auto mx-auto">
+                            <div class="row no-gutters justify-content-center">
+                                <div class="col-auto">
+                                    <a href="index.html" class="btn btn-link-default active">
+                                        <i class="material-icons">store_mall_directory</i>
+                                    </a>
+                                    <center>
+                                        <p class="text-mute" style="font-size: 10px; margin-top: -27px;opacity:0.5">Home</p>
+                                    </center>
+                                </div>
+                                <div class="col-auto">
+                                    <a href="storetype.html" class="btn btn-link-default">
+                                        <i class="material-icons">toc</i>
+                                    </a>
+                                    <center>
+                                        <p class="text-mute" style="font-size: 10px; margin-top: -27px;opacity: 0.5">Category</p>
+                                    </center>
+
+                                    </a>
+                                </div>
+                                <div class="col-auto">
+                                    <a href="cart.html" class="btn btn-default shadow centerbutton">
+                                        <i class="material-icons">local_mall</i>
+                                    </a>
+                                    <center>
+                                        <p class="text-mute" style="font-size: 10px; margin-top: -6px;opacity: 0.5">Cart</p>
+                                    </center>
+                                </div>
+                                <div class="col-auto">
+                                    <a href="location.html" class="btn btn-link-default">
+                                        <i class="material-icons">room</i>
+                                    </a>
+                                    <center>
+                                        <p class="text-mute" style="font-size: 10px; margin-top: -27px;opacity: 0.5">Location</p>
+                                    </center>
+                                </div>
+                                <div class="col-auto">
+                                    <a href="profile.html" class="btn btn-link-default">
+                                        <i class="material-icons">account_circle</i>
+                                    </a>
+                                    <center>
+                                        <p class="text-mute" style="font-size: 10px; margin-top: -27px; opacity: 0.5"> Profile</p>
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- jquery, popper and bootstrap js -->
+            <script src="js/jquery-3.3.1.min.js"></script>
+            <script src="js/popper.min.js"></script>
+            <script src="vendor/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+
+            <!-- swiper js -->
+            <script src="vendor/swiper/js/swiper.min.js"></script>
+
+            <!-- nouislider js -->
+            <script src="vendor/nouislider/nouislider.min.js"></script>
+
+            <!-- chosen multiselect js -->
+            <script src="vendor/chosen_v1.8.7/chosen.jquery.min.js"></script>
+
+            <!-- template custom js -->
+            <script src="https://kit.fontawesome.com/71ba3dee2b.js" crossorigin="anonymous"></script>
+            <script src="https://checkout.flutterwave.com/v3.js"></script>
+            <script src="js/main.js"></script>
+            <script src="js/script.js"></script>
+            <script src="login.js"></script>
+            <script src="js/profile.js"></script>
+            <script src="js/notification.js"></script>
+            <script src="cordova.js"></script>
+            <script src="js/share.js"></script>
+
+            <!-- page level script -->
+            <script>
+                document.getElementById("email").value = email;
+                document.getElementById("token").value = token;
+
+                function checkAmt() {
+                    amount = $("#amount").val();
+                    if (amount == "") {
+                        alert('Enter amount');
+                    } else {
+                        $(".cardpayment").removeClass("hidden");
+                    }
+                }
+
+                function makePayment() {
+                    inputamount = $("#amount").val();
+                    if (inputamount == "") {
+                        alert('Enter amount');
+                    } else {
+                        FlutterwaveCheckout({
+                            public_key: "FLWPUBK-f129a6e0a499714b8d4cc9eb618fc994-X",
+                            tx_ref: token,
+                            amount: inputamount,
+                            currency: "NGN",
+                            country: "NG",
+                            payment_options: "card",
+                            customer: {
+                                email: email,
+                                phone_number: localStorage.getItem("phone"),
+                                name: localStorage.getItem("custName"),
+                            },
+                            callback: function(data) { // specified callback function
+                                console.log(data);
+                                status = data.status;
+                                if (status == 'successful') {
+                                    $.ajax({
+                                        url: "https://evolve.capfields.com.ng/user_app/fundwallet.php",
+                                        type: "POST",
+                                        headers: {
+                                            Accept: 'application/json'
+                                        },
+                                        data: {
+                                            email: email,
+                                            token: token,
+                                            amount: inputamount,
+                                            reference: data.flw_ref
+                                        },
+                                        success: function(res) {
+                                            console.log(res)
+                                            msg = res.message;
+                                            if (msg == 'success') {
+                                                window.location = 'thankyou2.html';
+                                            } else {
+                                                alert(msg);
+                                            }
+                                        },
+                                        error: function(res) {
+                                            console.log(res)
+                                            alert('Error occurred. Transaction reference: ' + data.flw_ref);
+                                        }
+                                    })
+                                }
+                            },
+                            customizations: {
+                                title: "Capfields Evolve",
+                                description: "Fund Wallet",
+                                logo: "https://evolve.capfields.com.ng/user_app/img/logo.png",
+                            },
+                        });
+                    }
+                }
+
+                function showStack() {
+                    $(".paystack").toggleClass("hidden");
+                }
+
+                function bankTransfer() {
+                    $(".nobank").addClass("hidden");
+                    $(".transfer").toggleClass("hidden");
+                }
+                $(document).ready(function(e) {
+                    $("#uploadimage").on('submit', (function(e) {
+                        document.getElementById("uploadBtn").innerHTML = '<i class="fa fa-circle-o-notch fa-spin" style="font-size:25px"></i>';
+                        e.preventDefault();
+                        $.ajax({
+                            url: "https://evolve.capfields.com.ng/user_app/uploadwallet.php", // Url to which the request is send
+                            type: "POST", // Type of request to be send, called as method
+                            data: new FormData(this), // Data sent to server, a set of key/value pairs (i.e. form fields and values)
+                            contentType: false, // The content type used when sending data to the server.
+                            cache: false, // To unable request pages to be cached
+                            processData: false, // To send DOMDocument or non processed data file it is set to false
+                            success: function(data) // A function to be called if request succeeds
+                                {
+                                    console.log(data)
+                                    msg = data.message;
+                                    if (msg == 'success') {
+                                        alert('Payment proof uploaded successfully');
+                                        document.getElementById("uploadBtn").innerHTML = 'Submit';
+                                        location.href = 'index.html';
+                                    } else {
+                                        alert(msg);
+                                        document.getElementById("uploadBtn").innerHTML = 'Submit';
+                                    }
+                                },
+                            error: function(data) {
+                                console.log(data)
+                                alert('Error in connection')
+                                document.getElementById("uploadBtn").innerHTML = 'Submit';
+                            }
+                        });
+                    }));
+                });
+
+                function payWithPaystack() {
+                    inputamount = $("#amount").val();
+                    if (inputamount == "") {
+                        alert('Enter amount');
+                    } else if (inputamount < 100) {
+                        alert('Amount is too low');
+                    } else {
+                        amount = inputamount * 100;
+                        var handler = PaystackPop.setup({
+                            key: 'pk_live_73bea53857da2959a95f98f6e41c070115bb74f2',
+                            email: email,
+                            amount: amount,
+                            currency: "NGN",
+                            ref: '' + Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
+                            metadata: {
+                                custom_fields: [{
+                                    display_name: "Mobile Number",
+                                    variable_name: "mobile_number",
+                                    value: "+2348012345678"
+                                }]
+                            },
+                            callback: function(response) {
+                                alert('success. transaction ref is ' + response.reference);
+                                $.ajax({
+                                    url: "https://evolve.capfields.com.ng/user_app/fundwallet.php",
+                                    type: "POST",
+                                    headers: {
+                                        Accept: 'application/json'
+                                    },
+                                    data: {
+                                        email: email,
+                                        token: token,
+                                        amount: inputamount,
+                                        reference: response.reference
+                                    },
+                                    success: function(res) {
+                                        console.log(res)
+                                        msg = res.message;
+                                        if (msg == 'success') {
+                                            window.location = 'thankyou2.html';
+                                        } else {
+                                            alert(msg);
+                                        }
+                                    },
+                                    error: function(res) {
+                                        console.log(res)
+                                        alert('Error occurred. Transaction reference: ' + response.reference);
+                                    }
+                                })
+                            },
+                            onClose: function() {
+                                alert('window closed');
+                            }
+                        });
+                        handler.openIframe();
+                    }
+                }
+            </script>
+</body>
+
+</html>

@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en" class="pink-theme">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="Maxartkiller">
+
+    <title>My Orders · Evolve</title>
+
+    <!-- Material design icons CSS -->
+    <link rel="stylesheet" href="vendor/materializeicon/material-icons.css">
+
+    <!-- Roboto fonts CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap-4.3.1/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Swiper CSS -->
+    <link href="vendor/swiper/css/swiper.min.css" rel="stylesheet">
+
+    <!-- Chosen multiselect CSS -->
+    <link href="vendor/chosen_v1.8.7/chosen.min.css" rel="stylesheet">
+
+    <!-- nouislider CSS -->
+    <link href="vendor/nouislider/nouislider.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        .namedorder {
+            margin-top: 10px;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+        
+        .namedorder .card {
+            border-radius: 0;
+            width: 100%;
+            border: 1px solid #FF0068;
+            background: linear-gradient(90deg, whitesmoke 50%, white 50%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row no-gutters vh-100 loader-screen">
+        <div class="col align-self-center text-white text-center">
+            <img src="img/logo.png" height="50px" alt="logo">
+            <h3><span class="font-weight-light">Capfields</span>Evolve</h3>
+            <div class="laoderhorizontal">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar">
+        <div class="text-center">
+            <div class="figure-menu shadow">
+                <figure><img src="img/userpic.png" alt=""></figure>
+            </div>
+            <h5 class="mb-1" id="customerName"></h5>
+            <!--<p class="text-mute small">Abuja, Nigeria</p>-->
+        </div>
+        <br>
+        <div class="row mx-0">
+            <div class="col">
+                <div class="card mb-3 border-0 shadow-sm bg-template-light">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <p class="text-secondary small mb-0">Available Balance</p>
+                                <h6 class="text-dark my-0" id="walletBalance"></h6>
+                            </div>
+                            <div class="col-auto">
+                                <a href="fundwallet.html"><button class="btn btn-default button-rounded-36 shadow"><i class="material-icons">add</i></button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h5 class="subtitle text-uppercase"><span>Menu</span></h5>
+                <div class="list-group main-menu">
+                    <a href="index.html" class="list-group-item list-group-item-action active">Home</a>
+                    <a href="notification.html" class="list-group-item list-group-item-action">Notification <span class="badge badge-dark text-white" id="notCounter"></span></a>
+                    <a href="transfer.html" class="list-group-item list-group-item-action">Wallet Transfer</a>
+                    <a href="vendor.html" class="list-group-item list-group-item-action">Producers</a>
+                    <a href="farmonline.html" class="list-group-item list-group-item-action">Farm online</a>
+                    <a href="my-order.html" class="list-group-item list-group-item-action">My Order</a>
+                    <a href="profile.html" class="list-group-item list-group-item-action">My Profile</a>
+                    <a href="setting.html" class="list-group-item list-group-item-action">Settings</a>
+                    <a href="#" id="shareBtn" class="list-group-item list-group-item-action">Share App</a>
+                    <a href="#" onclick="logout()" class="list-group-item list-group-item-action mt-4">Logout</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="wrapper">
+        <div class="header">
+            <div class="row no-gutters">
+                <div class="col-auto">
+                    <button class="btn  btn-link text-dark menu-btn"><img src="img/menu.png" alt=""><span class="new-notification"></span></button>
+                </div>
+                <div class="col text-center"><img src="img/logo-header.png" alt="" class="header-logo"></div>
+                <div class="col-auto">
+                    <a href="profile.html" class="btn  btn-link text-dark"><i class="material-icons">account_circle</i></a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="subtitle h6">
+                <div class="d-inline-block">
+                    My Orders<br>
+                    <!--<p class="small text-mute">2 Orders</p>-->
+                </div>
+                <div class="d-inline-block" style="float:right">
+                    <div class="trace hidden">
+                        <a id="traceOrder" style="color:blue;text-decoration:underline">Monitor Order</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 namedorder hidden">
+                    <div class="card">
+                        <div class="card-body">
+
+                            <center>
+                                <h4>Saved Carts</h4>
+
+                                <table id="namedtable" class="table table-bordered table-hover table-responsive">
+
+                                </table>
+                            </center>
+
+                        </div>
+                        <div class="card-footer hidden">
+                            <input type="hidden" id="paycode">
+                            <input type="number" id="payamt" class="form-control" placeholder="Enter amount">
+                            <center>
+                                <p class="text-muted">Select payment method</p>
+                                <div class="row justify-content-center">
+                                    <div class="col-4">
+                                        <button class="btn btn-default btn-block" id="instalwallet" onclick="instalWallet()">Wallet</button>
+                                    </div>
+                                    <div class="col-4">
+                                        <button class="btn btn-default btn-block" id="instalcard" onclick="instalCardPay()">Card</button>
+                                    </div>
+                                </div>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 px-0">
+                    <ul class="list-group list-group-flush mb-4 myorder" id="cartList">
+                    </ul>
+                </div>
+                <div class="col-12 px-0">
+                    <a href="submit-order.html"><button class="btn btn-default btn-block shadow">Submit previous order</button></a>
+                </div>
+            </div>
+            <div class="delivery hidden">
+                <table class="table table-responsive">
+                    <thead>
+                        <th>Order ID</th>
+                        <th>Driver Name</th>
+                        <th>Driver Plate Number</th>
+                        <th>Phone Number</th>
+                        <th>Order Date</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td id="orderid"></td>
+                            <td id="drivername"></td>
+                            <td id="driverplate"></td>
+                            <td>
+                                <a id="driverphone"></a>
+                            </td>
+                            <td id="orderdate"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="table table-borderless">
+                    <thead>
+                        <th>Product</th>
+                        <th>Picture</th>
+                    </thead>
+                    <tbody id="agentuploads">
+
+                    </tbody>
+                </table>
+
+                <br>
+                <div class="pod hidden">
+                    <button class="btn btn-default btn-rounded btn-block shadow podcard" onclick="podCard()">Pay with Card</button>
+                    <button class="btn btn-default btn-rounded btn-block shadow cash" onclick="podCash()">Pay with cash</button>
+                    <button class="btn btn-default btn-rounded btn-block shadow transfer" onclick="podTransfer()">Pay with Transfer</button>
+                </div><br>
+                <div class="podcards hidden">
+                    <button class="btn btn-success btn-rounded btn-block shadow" onclick="payWithPaystack()">Pay with Paystack</button>
+                    <button class="btn btn-primary btn-rounded btn-block shadow" onclick="payWithRave()">Pay with Flutterwave</button>
+                </div>
+                <div class="podcash hidden">
+                    <center>
+                        <h4 id="showAmount"></h4>
+                    </center>
+                    <button class="btn btn-primary btn-block btn-rounded shadow" id="cashGiven" onclick="cashGiven()">Cash Given</button>
+                </div>
+                <div class="podtransfer hidden">
+                    <center>
+                        <p>Show payment receipt to our agent</p>
+                    </center>
+                    <table class="table table-bordered">
+                        <tr>
+                            <td>Account Number</td>
+                            <td>1019049321</td>
+                        </tr>
+                        <tr>
+                            <td>Account Name</td>
+                            <td>Capfields Nig Ltd</td>
+                        </tr>
+                        <tr>
+                            <td>Bank</td>
+                            <td>UBA</td>
+                        </tr>
+                    </table><br>
+                    <form id="uploadimage" action="" method="post" enctype="multipart/form-data">
+                        <input type="hidden" name="email" id="email">
+                        <input type="hidden" name="token" id="token">
+                        <input type="hidden" id="cartcod" name="code">
+                        <div class="form-group">
+                            <label>Add Receipt</label>
+                            <input type="file" name="pic" class="form-control" required>
+                        </div>
+                        <button class="btn btn-default btn-block btn-rounded shadow" id="submitBtn" type="submit">Upload Receipt</button>
+                    </form>
+                </div>
+                <input type="hidden" id="cartcode">
+                <input type="hidden" id="amount">
+                <center><button class="btn btn-default shadow btn-block btn-rounded" style="margin-top:10px;" id="confirmDelivery">Confirm Delivery</button></center>
+            </div>
+            <div class="noorder hidden" style="margin-top: 100px;">
+                <center>
+                    <img src="img/nocart.png" height="200px" alt="">
+                    <a href="index.html"><button class="btn btn-default btn-block shadow" style="margin-top:20px">Go Back</button></a>
+                </center>
+            </div>
+            <div class="col-12 text-center loader">
+                <div class="btn btn-default btn-rounded mb-3">
+                    <div class="btn-loader">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <h6 class="d-inline-block text-left mx-2 mb-0 text-normal">Loading...<br><small class="text-mute">Please wait for a while...</small></h6>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="no-gutters">
+                <div class="col-auto mx-auto">
+                    <div class="row no-gutters justify-content-center">
+                        <div class="col-auto">
+                            <a href="index.html" class="btn btn-link-default active">
+                                <i class="material-icons">store_mall_directory</i>
+                            </a>
+                            <center>
+                                <p class="text-mute" style="font-size: 10px; margin-top: -27px;opacity:0.5">Home</p>
+                            </center>
+                        </div>
+                        <div class="col-auto">
+                            <a href="storetype.html" class="btn btn-link-default">
+                                <i class="material-icons">toc</i>
+                            </a>
+                            <center>
+                                <p class="text-mute" style="font-size: 10px; margin-top: -27px;opacity: 0.5">Category</p>
+                            </center>
+                        </div>
+                        <div class="col-auto">
+                            <a href="cart.html" class="btn btn-default shadow centerbutton">
+                                <i class="material-icons">local_mall</i>
+                            </a>
+                            <center>
+                                <p class="text-mute" style="font-size: 10px; margin-top: -6px;opacity: 0.5">Cart</p>
+                            </center>
+                        </div>
+                        <div class="col-auto">
+                            <a href="location.html" class="btn btn-link-default">
+                                <i class="material-icons">room</i>
+                            </a>
+                            <center>
+                                <p class="text-mute" style="font-size: 10px; margin-top: -27px;opacity: 0.5">Location</p>
+                            </center>
+                        </div>
+                        <div class="col-auto">
+                            <a href="profile.html" class="btn btn-link-default">
+                                <i class="material-icons">account_circle</i>
+                            </a>
+                            <center>
+                                <p class="text-mute" style="font-size: 10px; margin-top: -27px; opacity: 0.5"> Profile</p>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- jquery, popper and bootstrap js -->
+    <script src="https://kit.fontawesome.com/71ba3dee2b.js" crossorigin="anonymous"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="vendor/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- swiper js -->
+    <script src="vendor/swiper/js/swiper.min.js"></script>
+
+    <!-- nouislider js -->
+    <script src="vendor/nouislider/nouislider.min.js"></script>
+
+    <!-- chosen multiselect js -->
+    <script src="vendor/chosen_v1.8.7/chosen.jquery.min.js"></script>
+
+    <!-- template custom js -->
+    <script src="js/main.js"></script>
+    <script src="js/script.js"></script>
+    <script src="login.js"></script>
+    <script src="js/profile.js"></script>
+    <script src="js/notification.js"></script>
+    <script src="cordova.js"></script>
+    <script src="js/share.js"></script>
+    <script src="js/upload.js"></script>
+    <script src="https://checkout.flutterwave.com/v3.js"></script>
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+    <script src="js/my-order.js"></script>
+    <!-- page level script -->
+
+</body>
+
+</html>

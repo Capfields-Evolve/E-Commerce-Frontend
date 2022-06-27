@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.evolve.user" version="2.8.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>Evolve</name>
+    <description>
+        Evolve Shopping App
+    </description>
+    <author email="dev@cordova.apache.org" href="http://cordova.io">
+        Apache Cordova Team
+    </author>
+    <content src="introduction.html" />
+    <plugin name="cordova-plugin-whitelist" spec="1" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+	<preference name="android-targetSdkVersion" value="30" />
+    <preference name="StatusBarOverlaysWebView" value="true" />
+    <preference name="StatusBarStyle" value="default" />
+    <preference name="StatusBarBackgroundColor" value="#FF0068"/>
+    <preference name="StatusBarStyle" value="lightcontent" />
+    <preference name="ShowSplashScreenSpinner" value="false" />
+	<preference name="FadeSplashScreenDuration" value="500" />
+	<preference name="SplashScreenDelay" value="5000" />
+    <platform name="android">
+    <feature name="SocialSharing">
+  <param name="android-package" value="nl.xservices.plugins.SocialSharing" />
+</feature>
+<preference name="android-minSdkVersion" value="19" />
+    <custom-config-file target="AndroidManifest.xml" parent="application">
+      	<meta-data android:name="co.paystack.android.PublicKey" android:value="pk_live_73bea53857da2959a95f98f6e41c070115bb74f2"/>
+    </custom-config-file>
+	<icon background="www/img/log1.png" density="ldpi" foreground="www/img/log1.png" />
+            <icon background="www/img/log2.png" density="mdpi" foreground="www/img/log2.png" />
+            <icon background="www/img/log3.png" density="hdpi" foreground="www/img/log3.png" />
+                <icon background="www/img/log4.png" density="xhdpi" foreground="www/img/log4.png"/>
+              <icon background="www/img/log5.png" density="xxhdpi" foreground="www/img/log5.png" />
+                <icon background="www/img/logo.png" density="xxxhdpi" foreground="www/img/logo.png" />
+        <allow-intent href="market:*" />
+
+        <splash density="land-hdpi" src="www/img/land3.png" />
+        <splash density="land-ldpi" src="www/img/land1.png" />
+        <splash density="land-mdpi" src="www/img/land2.png" />
+        <splash density="land-xhdpi" src="www/img/land4.png" />
+        <splash density="port-hdpi" src="www/img/port3.png" />
+        <splash density="port-ldpi" src="www/img/port1.png" />
+        <splash density="port-mdpi" src="www/img/port2.png" />
+        <splash density="port-xhdpi" src="www/img/port4.png" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+   
+    <icon src="www/img/icons/180.png" width="180" height="180" />
+    <!-- iOS 7.0+ -->
+    <!-- iPhone / iPod Touch  -->
+    <icon src="www/img/icons/60.png" width="60" height="60" />
+    <icon src="www/img/icons/120.png" width="120" height="120" />
+   
+    <!-- Spotlight Icon -->
+    <icon src="www/img/icons/40.png" width="40" height="40" />
+    <icon src="www/img/icons/80.png" width="80" height="80" />
+    <!-- iOS 6.1 -->
+    <!-- iPhone / iPod Touch -->
+    <icon src="www/img/icons/57.png" width="57" height="57" />
+    <icon src="www/img/icons/114.png" width="114" height="114" />
+   
+    <!-- iPhone Spotlight and Settings Icon -->
+    <icon src="www/img/icons/29.png" width="29" height="29" />
+    <icon src="www/img/icons/58.png" width="58" height="58" />
+	<icon src="www/img/icons/1024.png" width="1024" height="1024" />
+	<icon src="www/img/icons/87.png" width="87" height="87" />
+   
+    </platform>
+</widget>
